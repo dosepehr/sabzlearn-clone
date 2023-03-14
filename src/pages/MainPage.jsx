@@ -1,9 +1,10 @@
-import React from 'react'
-
+import { Topbar } from '../components';
 const MainPage = () => {
-  return (
-    <div className='bg-red-400' >MainPage</div>
-  )
-}
+    return (
+        <div>
+            <Topbar />
+        </div>
+    );
+};
 
-export default MainPage
+export default MainPage;
