@@ -5,8 +5,11 @@ const Navbar = () => {
     return (
         <div className='border-b-[1px] border-b-white border-opacity-30'>
             <div className='max-w-[1080px] items-center justify-between mx-auto p-2 flex'>
-                {/* TODO make ham menu and its button */}
-                <p className='min-[930px]:hidden'>ham menu button</p>
+                <div className='min-[930px]:hidden'>
+                    <div class='hamburger-menu'>
+                        <div class='bar'></div>
+                    </div>
+                </div>
                 <div className='flex items-center'>
                     <img src='/images/logo.png' alt='' className='h-10 ml-9' />
                     <div className='hidden min-[930px]:flex'>
