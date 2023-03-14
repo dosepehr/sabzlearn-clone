@@ -4,10 +4,12 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                topbatLinks:'#ffffffcc'
-            }
+                topbatLinks: '#ffffffcc',
+                primaryColor: '#242531',
+                secondaryColor: '#2f3040',
+                mainYellow:'#cdb187;'
+            },
         },
     },
     plugins: [],
 };
-

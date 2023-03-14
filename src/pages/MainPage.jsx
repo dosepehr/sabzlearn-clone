@@ -1,8 +1,9 @@
-import { TopSection } from '../components';
+import { TopSection, Courses } from '../components';
 const MainPage = () => {
     return (
         <>
             <TopSection />
+            <Courses />
         </>
     );
 };
