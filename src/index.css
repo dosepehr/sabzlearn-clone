@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.top {
+    background: linear-gradient(#2f3041d7, #2f3041d7), url('../public/images/background-header-scaled.jpg');
+    background-position: center center;
+}
