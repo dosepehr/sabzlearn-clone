@@ -1,11 +1,9 @@
-import { Topbar, Navbar, Landing } from '../components';
+import { TopSection } from '../components';
 const MainPage = () => {
     return (
-        <div className='top' >
-            <Topbar />
-            <Navbar />
-            <Landing />
-        </div>
+        <>
+            <TopSection />
+        </>
     );
 };
 

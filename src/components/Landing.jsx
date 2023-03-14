@@ -5,6 +5,7 @@ const Landing = () => {
                 با آکادمی سبز لرن برنامه نویسی رو با خیال راحت یاد بگیر و پیشرفت
                 کن
             </p>
+            {/* TODO add search button and scroll bottom  */}
             <input
                 placeholder='جستجو...'
                 type='text'
