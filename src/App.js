@@ -1,11 +1,8 @@
+import { useRoutes } from 'react-router-dom';
+import { routes } from './routes/routes';
 function App() {
-    return (
-        <>
-            <b></b>
-            <h1 className='text-3xl font-bold underline text-green-400'>start project!</h1>
-            <b></b>
-        </>
-    );
+    const router = useRoutes(routes);
+    return <>{router}</>;
 }
 
 export default App;
