@@ -2,7 +2,7 @@ import { topbarLinks, topbarIcons } from '../constants/topbarData';
 const Topbar = () => {
     return (
         <div className='bg-[#00000024] px-2'>
-            <div className='flex max-[930px]:hidden items-center justify-between py-2  mx-auto w-full max-w-[1000px]'>
+            <div className='flex max-[930px]:hidden items-center justify-between p-2 mx-auto w-full max-w-[1080px]'>
                 <div className='flex'>
                     {topbarLinks.map((link) => (
                         <p
