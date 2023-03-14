@@ -1,13 +1,19 @@
 import { navbarData } from '../constants/navbarData';
 import { FaShoppingBasket } from 'react-icons/fa';
 import { BsFillPersonFill } from 'react-icons/bs';
+import { mainContext } from '../context';
+import { useContext } from 'react';
 const Navbar = () => {
+    const { menu, setMenu } = useContext(mainContext);
+    const menuHandler = () => {
+        setMenu((prev) => !prev);
+    };
     return (
         <div className='border-b-[1px] border-b-white border-opacity-30'>
             <div className='max-w-[1080px] items-center justify-between mx-auto p-2 flex'>
                 <div className='min-[930px]:hidden'>
-                    <div class='hamburger-menu'>
-                        <div class='bar'></div>
+                    <div className='hamburger-menu' onClick={menuHandler}>
+                        <div className={`${menu ? 'bar active' : 'bar'}`}></div>
                     </div>
                 </div>
                 <div className='flex items-center'>

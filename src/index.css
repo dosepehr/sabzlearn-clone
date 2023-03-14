@@ -47,3 +47,30 @@
     -ms-transform: translateY(10px);
     -o-transform: translateY(10px);
 }
+
+
+
+.bar.active {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    background-color: transparent;
+}
+
+.bar.active::before {
+    transform: translateY(0) rotate(45deg);
+    -webkit-transform: translateY(0) rotate(45deg);
+    -moz-transform: translateY(0) rotate(45deg);
+    -ms-transform: translateY(0) rotate(45deg);
+    -o-transform: translateY(0) rotate(45deg);
+}
+
+.bar.active::after {
+    transform: translateY(0) rotate(-45deg);
+    -webkit-transform: translateY(0) rotate(-45deg);
+    -moz-transform: translateY(0) rotate(-45deg);
+    -ms-transform: translateY(0) rotate(-45deg);
+    -o-transform: translateY(0) rotate(-45deg);
+}

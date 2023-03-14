@@ -21,6 +21,7 @@ const Topbar = () => {
                     {topbarIcons.map((icon) => (
                         <>
                             <span
+                                key={icon.id}
                                 className='mx-1 text-white text-sm '
                                 id={`link-${icon.id}`}
                             >
