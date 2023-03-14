@@ -1,4 +1,5 @@
 import { topbarLinks, topbarIcons } from '../constants/topbarData';
+import { Tooltip as ReactTooltip } from 'react-tooltip';
 const Topbar = () => {
     return (
         <div className='bg-[#00000024] px-2'>
@@ -17,11 +18,20 @@ const Topbar = () => {
                     <p className='text-white ml-2 font-semibold'>
                         sabzlearn@gmail.com
                     </p>
-                    {/* TODO make links tooltip */}
                     {topbarIcons.map((icon) => (
-                        <span className='mx-1 text-white text-sm '>
-                            {icon.icon}
-                        </span>
+                        <>
+                            <span
+                                className='mx-1 text-white text-sm '
+                                id={`link-${icon.id}`}
+                            >
+                                {icon.icon}
+                            </span>
+                            <ReactTooltip
+                                anchorId={`link-${icon.id}`}
+                                place='bottom'
+                                content={`مارا در ${icon.tooltip} دنبال کنید`}
+                            />
+                        </>
                     ))}
                 </div>
             </div>
