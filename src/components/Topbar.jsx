@@ -2,6 +2,7 @@ import { topbarLinks, topbarIcons } from '../constants/topbarData';
 const Topbar = () => {
     return (
         <div className='bg-[#00000024]'>
+            {/* TODO edit width lg */}
             <div className='lg:flex items-center justify-between container mx-auto 2xl:px-40 py-1 hidden'>
                 <div className='flex'>
                     {topbarLinks.map((link) => (
@@ -19,7 +20,9 @@ const Topbar = () => {
                     </p>
                     {/* TODO make links tooltip */}
                     {topbarIcons.map((icon) => (
-                        <span className='mx-1 text-white text-sm '>{icon.icon}</span>
+                        <span className='mx-1 text-white text-sm '>
+                            {icon.icon}
+                        </span>
                     ))}
                 </div>
             </div>
