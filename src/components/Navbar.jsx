@@ -4,7 +4,7 @@ import { BsFillPersonFill } from 'react-icons/bs';
 import { mainContext } from '../context';
 import { useContext } from 'react';
 import { Menu } from './index';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 const Navbar = () => {
     const { menu, setMenu } = useContext(mainContext);
     const menuHandler = () => {
@@ -14,11 +14,12 @@ const Navbar = () => {
         <>
             <div className='border-b-[1px] border-b-white border-opacity-30'>
                 <div className='max-w-[1080px] items-center justify-between mx-auto p-2 flex'>
-                        <div className='hamburger-menu min-[930px]:hidden' onClick={menuHandler}>
-                            <div
-                                className={`${menu ? 'bar active' : 'bar'}`}
-                            ></div>
-                        </div>
+                    <div
+                        className='hamburger-menu min-[930px]:hidden'
+                        onClick={menuHandler}
+                    >
+                        <div className={`${menu ? 'bar active' : 'bar'}`}></div>
+                    </div>
                     <div className='flex items-center'>
                         <img
                             src='/images/logo.png'
@@ -35,6 +36,12 @@ const Navbar = () => {
                                     {link.title}
                                 </Link>
                             ))}
+                            <Link
+                                to={`/shop/`}
+                                className='mx-2 text-topbatLinks'
+                            >
+                                فروشگاه
+                            </Link>
                         </div>
                     </div>
                     <div className='flex items-center '>

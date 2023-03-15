@@ -4,5 +4,4 @@ export const navbarData = [
     { id: 3, title: 'مقالات', href: 'blogs' },
     { id: 4, title: 'پایتون', href: 'python' },
     { id: 5, title: 'مهارت های نرم', href: 'soft-skills' },
-    { id: 6, title: 'فروشگاه', href: 'shop' },
 ];

@@ -1,4 +1,4 @@
-import { MainPage, CategoryPage, CoursePage } from '../pages';
+import { MainPage, CategoryPage, CoursePage, ShopPage } from '../pages';
 export const routes = [
     {
         path: '/',
@@ -11,5 +11,9 @@ export const routes = [
     {
         path: '/courses/:courseName',
         element: <CoursePage />,
+    },
+    {
+        path: '/shop',
+        element: <ShopPage />,
     },
 ];

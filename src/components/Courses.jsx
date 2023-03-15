@@ -1,4 +1,4 @@
-import { CourseBox} from './index';
+import { CourseBox } from './index';
 const Courses = () => {
     return (
         <>
