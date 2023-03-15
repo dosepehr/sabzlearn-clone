@@ -5,4 +5,5 @@ export { default as TopSection } from './TopSection';
 export { default as Menu } from './Menu';
 export { default as Courses } from './Courses';
 export { default as CourseBox } from './CourseBox';
-export { default as Articles } from './ArticlesSlider';
+export { default as ArticlesSlider } from './ArticlesSlider';
+export { default as Footer } from './Footer';
