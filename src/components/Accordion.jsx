@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { mainContext } from '../context';
 import { BsFillPlayCircleFill } from 'react-icons/bs';
 function Accordion({ sections }) {
-    const [expandedIndex, setExpandedIndex] = useState(null);
+    const { expandedIndex, setExpandedIndex } = useContext(mainContext);
 
     const toggleSection = (index) => {
         if (index === expandedIndex) {

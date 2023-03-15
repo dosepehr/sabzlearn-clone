@@ -4,6 +4,7 @@ import { routes } from './routes/routes';
 import { mainContext } from './context';
 function App() {
     const [menu, setMenu] = useState(false);
+    const [expandedIndex, setExpandedIndex] = useState(null);
     const router = useRoutes(routes);
     return (
         <>
@@ -11,6 +12,8 @@ function App() {
                 value={{
                     menu,
                     setMenu,
+                    expandedIndex,
+                    setExpandedIndex,
                 }}
             >
                 {router}
