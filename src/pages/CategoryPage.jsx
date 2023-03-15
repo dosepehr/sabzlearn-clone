@@ -23,17 +23,19 @@ const CategoryPage = () => {
                             },
                         ]}
                     />
-                    {navbarData.map(
-                        (link) =>
-                            link.href !== categoryName && (
-                                <Link
-                                    to={`/categories/${link.href}`}
-                                    className='text-topbatLinks block'
-                                >
-                                    {link.title}
-                                </Link>
-                            )
-                    )}
+                    <div className='w-fit space-y-5 '>
+                        {navbarData.map(
+                            (link) =>
+                                link.href !== categoryName && (
+                                    <Link
+                                        to={`/categories/${link.href}`}
+                                        className='text-topbatLinks block'
+                                    >
+                                        {link.title}
+                                    </Link>
+                                )
+                        )}
+                    </div>
                 </div>
             </div>
             <Courses />
