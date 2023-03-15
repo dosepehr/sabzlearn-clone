@@ -39,8 +39,9 @@ function Accordion({ sections }) {
                         </svg>
                     </button>
 
-                    {section.sessions.map((session) => (
+                    {section.sessions.map((session, sessionIndex) => (
                         <div
+                            key={sessionIndex}
                             className={`p-4 bg-secondaryColor text-topbatLinks flex items-center justify-between border-t border-primaryColor ${
                                 expandedIndex === index ? 'block' : 'hidden'
                             } transition-all duration-500`}

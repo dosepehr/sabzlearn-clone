@@ -4,7 +4,7 @@ import { routes } from './routes/routes';
 import { mainContext } from './context';
 function App() {
     const [menu, setMenu] = useState(false);
-    const [expandedIndex, setExpandedIndex] = useState(null);
+    const [expandedIndex, setExpandedIndex] = useState(0);
     const router = useRoutes(routes);
     return (
         <>
