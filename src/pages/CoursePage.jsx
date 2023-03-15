@@ -2,7 +2,7 @@ import { Topbar, Navbar, Breadcrumb } from '../components';
 
 const CoursePage = () => {
     return (
-        <div className='bg-secondaryColor'>
+        <div className='bg-secondaryColor pb-10'>
             <Topbar />
             <Navbar />
             <div className='max-w-[1080px] mx-auto'>
@@ -20,19 +20,19 @@ const CoursePage = () => {
                         ]}
                     />
                 </div>
-                <div className='flex'>
-                    <div className='w-8/12 ml-20'>
+                <div className='flex flex-col md:flex-row px-10 md:pr-0 min[930px]:py-0'>
+                    <div className='w-full md:w-8/12 ml-20'>
                         <img
                             src='/images/sabz-next.png'
                             alt=''
                             className='w-full'
                         />
                     </div>
-                    <div className='w-4/12'>
+                    <div className='w-full md:w-4/12'>
                         <p className='text-topbatLinks text-center'>
                             850,000 تومان
                         </p>
-                        <p className='bg-topbatLinks text-white py-2 px-1 rounded-md my-5'>
+                        <p className='bg-[#ffffff45] text-white py-2 px-1 rounded-md my-5'>
                             پس از خرید، بلافاصله به محتوای دوره دسترسی خواهید
                             داشت و میتوانید دوره را مشاهده و یا دانلود کنید.
                         </p>
@@ -43,8 +43,37 @@ const CoursePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex">
-
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-4 py-10'>
+                    <div className='bg-primaryColor border-r-topbatLinks border-dashed border-r-2'>
+                        <div className='text-topbatLinks px-3 py-4'>
+                            <p className='text-sm'>مدرس : محمدامین سعیدی راد</p>
+                        </div>
+                    </div>
+                    <div className='bg-primaryColor border-r-topbatLinks border-dashed border-r-2'>
+                        <div className='text-topbatLinks px-3 py-4'>
+                            <p className='text-sm'>وضعیت دوره : پیش فروش</p>
+                        </div>
+                    </div>
+                    <div className='bg-primaryColor border-r-topbatLinks border-dashed border-r-2'>
+                        <div className='text-topbatLinks px-3 py-4'>
+                            <p className='text-sm'>تعداد درس : 0</p>
+                        </div>
+                    </div>
+                    <div className='bg-primaryColor border-r-topbatLinks border-dashed border-r-2'>
+                        <div className='text-topbatLinks px-3 py-4'>
+                            <p className='text-sm'>دانشجو : 1020</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='text-topbatLinks' >
+                    نکست یه فریمورک مبتنی بر ری‌اکت هست که امروزه تو بازار کار
+                    یکی از مهم‌ترین تکنولوژی‌ها برای توسعه دهنده های ری‌اکت به
+                    حساب میاد. نکست رو میشه مکمل ری‌اکت دونست. یعنی هر چی که
+                    ری‌اکت داره نکست هم داره، بعلاوه چند قابلیت مهم و کاربردی
+                    دیگه. عمدتا از نکست با هدف بهبود سئوی اپلیکیشن های ری‌اکتی
+                    استفاده میشه و بعنوان توسعه‌ دهنده ری‌اکت، باید نکست رو
+                    بخوبی بلد باشین. تو این دوره فریمورک محبوب نکست رو بصورت
+                    پروژه محور و عملی یاد می‌گیرین.
                 </div>
             </div>
         </div>
