@@ -1,8 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
-import { Topbar, Navbar, Footer, Courses } from '../components';
+import { Topbar, Navbar, Footer, Courses, Breadcrumb } from '../components';
 import { navbarData } from '../constants/navbarData';
 const CategoryPage = () => {
     const { categoryName } = useParams();
+    const category = navbarData.filter((data) => data.href === categoryName);
     return (
         <>
             {/* add pagination */}
@@ -12,6 +13,16 @@ const CategoryPage = () => {
             </div>
             <div className='bg-primaryColor pt-5'>
                 <div className='max-w-[1080px] mx-auto px-12 space-y-3'>
+                    <Breadcrumb
+                        category={category}
+                        links={[
+                            {
+                                id: 1,
+                                title: category[0].title,
+                                href: category[0].href,
+                            },
+                        ]}
+                    />
                     {navbarData.map(
                         (link) =>
                             link.href !== categoryName && (
