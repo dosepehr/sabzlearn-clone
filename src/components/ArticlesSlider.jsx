@@ -37,104 +37,106 @@ const ArticlesSlider = () => {
         ],
     };
     return (
-        <div>
-            {/* TODO edit buttons style and title  */}
-            <p className='text-topbatLinks text-center text-lg my-10 title'>
-                آخرین مقالات سایت
-            </p>
-            <Slider {...settings}>
-                <div className='px-1'>
-                    <img
-                        src='/images/python.jpg'
-                        alt=''
-                        className='rounded-md'
-                    />
-                    <div className='text-center space-y-2 mt-2 '>
-                        <p className='text-xs text-topbatLinks'>پایتون</p>
-                        <p className='text-white text-base'>
-                            کاربرد پایتون چیست
-                        </p>
+        <div className='bg-primaryColor pb-10'>
+            <div className='max-w-[1080px] mx-auto '>
+                {/* TODO edit buttons style and title  */}
+                <p className='text-topbatLinks text-center text-lg mb-10 title'>
+                    آخرین مقالات سایت
+                </p>
+                <Slider {...settings}>
+                    <div className='px-1'>
+                        <img
+                            src='/images/python.jpg'
+                            alt=''
+                            className='rounded-md'
+                        />
+                        <div className='text-center space-y-2 mt-2 '>
+                            <p className='text-xs text-topbatLinks'>پایتون</p>
+                            <p className='text-white text-base'>
+                                کاربرد پایتون چیست
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className='px-1'>
-                    <img
-                        src='/images/python.jpg'
-                        alt=''
-                        className='rounded-md'
-                    />
-                    <div className='text-center space-y-2 mt-2 '>
-                        <p className='text-xs text-topbatLinks'>پایتون</p>
-                        <p className='text-white text-base'>
-                            کاربرد پایتون چیست
-                        </p>
+                    <div className='px-1'>
+                        <img
+                            src='/images/python.jpg'
+                            alt=''
+                            className='rounded-md'
+                        />
+                        <div className='text-center space-y-2 mt-2 '>
+                            <p className='text-xs text-topbatLinks'>پایتون</p>
+                            <p className='text-white text-base'>
+                                کاربرد پایتون چیست
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className='px-1'>
-                    <img
-                        src='/images/python.jpg'
-                        alt=''
-                        className='rounded-md'
-                    />
-                    <div className='text-center space-y-2 mt-2 '>
-                        <p className='text-xs text-topbatLinks'>پایتون</p>
-                        <p className='text-white text-base'>
-                            کاربرد پایتون چیست
-                        </p>
+                    <div className='px-1'>
+                        <img
+                            src='/images/python.jpg'
+                            alt=''
+                            className='rounded-md'
+                        />
+                        <div className='text-center space-y-2 mt-2 '>
+                            <p className='text-xs text-topbatLinks'>پایتون</p>
+                            <p className='text-white text-base'>
+                                کاربرد پایتون چیست
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className='px-1'>
-                    <img
-                        src='/images/python.jpg'
-                        alt=''
-                        className='rounded-md'
-                    />
-                    <div className='text-center space-y-2 mt-2 '>
-                        <p className='text-xs text-topbatLinks'>پایتون</p>
-                        <p className='text-white text-base'>
-                            کاربرد پایتون چیست
-                        </p>
+                    <div className='px-1'>
+                        <img
+                            src='/images/python.jpg'
+                            alt=''
+                            className='rounded-md'
+                        />
+                        <div className='text-center space-y-2 mt-2 '>
+                            <p className='text-xs text-topbatLinks'>پایتون</p>
+                            <p className='text-white text-base'>
+                                کاربرد پایتون چیست
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className='px-1'>
-                    <img
-                        src='/images/python.jpg'
-                        alt=''
-                        className='rounded-md'
-                    />
-                    <div className='text-center space-y-2 mt-2 '>
-                        <p className='text-xs text-topbatLinks'>پایتون</p>
-                        <p className='text-white text-base'>
-                            کاربرد پایتون چیست
-                        </p>
+                    <div className='px-1'>
+                        <img
+                            src='/images/python.jpg'
+                            alt=''
+                            className='rounded-md'
+                        />
+                        <div className='text-center space-y-2 mt-2 '>
+                            <p className='text-xs text-topbatLinks'>پایتون</p>
+                            <p className='text-white text-base'>
+                                کاربرد پایتون چیست
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className='px-1'>
-                    <img
-                        src='/images/python.jpg'
-                        alt=''
-                        className='rounded-md'
-                    />
-                    <div className='text-center space-y-2 mt-2 '>
-                        <p className='text-xs text-topbatLinks'>پایتون</p>
-                        <p className='text-white text-base'>
-                            کاربرد پایتون چیست
-                        </p>
+                    <div className='px-1'>
+                        <img
+                            src='/images/python.jpg'
+                            alt=''
+                            className='rounded-md'
+                        />
+                        <div className='text-center space-y-2 mt-2 '>
+                            <p className='text-xs text-topbatLinks'>پایتون</p>
+                            <p className='text-white text-base'>
+                                کاربرد پایتون چیست
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className='px-1'>
-                    <img
-                        src='/images/python.jpg'
-                        alt=''
-                        className='rounded-md'
-                    />
-                    <div className='text-center space-y-2 mt-2 '>
-                        <p className='text-xs text-topbatLinks'>پایتون</p>
-                        <p className='text-white text-base'>
-                            کاربرد پایتون چیست
-                        </p>
+                    <div className='px-1'>
+                        <img
+                            src='/images/python.jpg'
+                            alt=''
+                            className='rounded-md'
+                        />
+                        <div className='text-center space-y-2 mt-2 '>
+                            <p className='text-xs text-topbatLinks'>پایتون</p>
+                            <p className='text-white text-base'>
+                                کاربرد پایتون چیست
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </Slider>
+                </Slider>
+            </div>
         </div>
     );
 };

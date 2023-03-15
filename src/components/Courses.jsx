@@ -1,4 +1,4 @@
-import { CourseBox, ArticlesSlider } from './index';
+import { CourseBox} from './index';
 const Courses = () => {
     return (
         <>
@@ -9,7 +9,6 @@ const Courses = () => {
                             <CourseBox />
                         ))}
                     </div>
-                    <ArticlesSlider />
                 </div>
             </div>
         </>
