@@ -4,6 +4,7 @@ import { BsFillPersonFill } from 'react-icons/bs';
 import { mainContext } from '../context';
 import { useContext } from 'react';
 import { Menu } from './index';
+import {Link} from 'react-router-dom'
 const Navbar = () => {
     const { menu, setMenu } = useContext(mainContext);
     const menuHandler = () => {
@@ -26,12 +27,13 @@ const Navbar = () => {
                         />
                         <div className='hidden min-[930px]:flex'>
                             {navbarData.map((link) => (
-                                <p
+                                <Link
+                                    to={`/categories/${link.href}`}
                                     key={link.id}
                                     className='mx-2 text-topbatLinks'
                                 >
                                     {link.title}
-                                </p>
+                                </Link>
                             ))}
                         </div>
                     </div>
