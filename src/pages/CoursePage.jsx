@@ -1,19 +1,19 @@
-import { Topbar, Navbar, Breadcrumb, Accordion } from '../components';
+import { Topbar, Navbar, Breadcrumb, Accordion, Footer } from '../components';
 
 const CoursePage = () => {
     const sections = [
         {
             title: 'فصل اول',
             sessions: [
-                { id: '1', title: 'جلسه اول فصل اول' },
-                { id: '2', title: 'جلسه دوم فصل اول' },
+                { id: '1', title: 'جلسه اول فصل اول', time: '10:12' },
+                { id: '2', title: 'جلسه دوم فصل اول', time: '20:43' },
             ],
         },
         {
             title: 'فصل دوم',
             sessions: [
-                { id: '1', title: 'جلسه اول فصل دوم' },
-                { id: '2', title: 'جلسه دوم فصل دوم' },
+                { id: '1', title: 'جلسه اول فصل دوم', time: '15:56' },
+                { id: '2', title: 'جلسه دوم فصل دوم', time: '22:45' },
             ],
         },
     ];
@@ -103,6 +103,7 @@ const CoursePage = () => {
                     <Accordion sections={sections} />
                 </div>
             </div>
+            <Footer />
         </>
     );
 };

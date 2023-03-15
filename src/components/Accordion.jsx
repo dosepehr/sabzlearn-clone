@@ -52,7 +52,9 @@ function Accordion({ sections }) {
                                 <p>{session.title}</p>
                             </div>
 
-                            <div className='text-topbatLinks'>18:34</div>
+                            <div className='text-topbatLinks'>
+                                {session.time}
+                            </div>
                         </div>
                     ))}
                 </div>
