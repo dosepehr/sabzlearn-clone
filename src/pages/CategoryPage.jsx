@@ -14,7 +14,6 @@ const CategoryPage = () => {
             <div className='bg-primaryColor pt-5'>
                 <div className='max-w-[1080px] mx-auto px-12 space-y-3'>
                     <Breadcrumb
-                        category={category}
                         links={[
                             {
                                 id: 1,

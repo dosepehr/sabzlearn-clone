@@ -5,9 +5,15 @@ const Breadcrumb = ({ links }) => {
         <div className='space-x-2 text-topbatLinks '>
             <Link to='/'>خانه / </Link>
             {links.map((link) => (
-                <Link key={link.id} className='font-bold'>
-                    {link.title}
-                </Link>
+                <>
+                    <Link
+                        to={`/${link.href}`}
+                        key={link.id}
+                        className='font-bold'
+                    >
+                        {link.title}
+                    </Link>
+                </>
             ))}
         </div>
     );
