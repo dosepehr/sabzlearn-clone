@@ -1,3 +1,4 @@
+import { Image, Shimmer } from 'react-shimmer';
 import { Topbar, Navbar, Breadcrumb, Accordion, Footer } from '../components';
 
 const CoursePage = () => {
@@ -39,11 +40,12 @@ const CoursePage = () => {
                     </div>
                     <div className='flex flex-col md:flex-row px-10 md:pr-0 min[930px]:py-0'>
                         <div className='w-full md:w-8/12 ml-20'>
-                            <img
-                                src='/images/sabz-next.png'
-                                alt=''
-                                className='w-full'
-                            />
+                            <div className='h-full w-full'>
+                                <Image
+                                    src='/images/sabz-next.png'
+                                    fallback={<Shimmer />}
+                                />
+                            </div>
                         </div>
                         <div className='w-full md:w-4/12'>
                             <p className='text-topbatLinks text-center'>

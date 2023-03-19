@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom';
+import { Image, Shimmer } from 'react-shimmer';
 const CourseBox = () => {
     return (
         <>
             <Link to={`/courses/next`}>
-                <div className='w-full rounded-xl bg-secondaryColor'>
-                    <img
-                        src='/images/sabz-next.png'
-                        alt=''
-                        className='rounded-t-xl w-full'
-                    />
+                <div className='w-full rounded-xl bg-secondaryColor overflow-hidden'>
+                    <div className='h-full w-full'>
+                        <Image
+                            src='/images/sabz-next.png'
+                            fallback={<Shimmer />}
+                        />
+                    </div>
                     <div className='px-5 pb-5'>
                         <p className='text-white text-center my-6'>
                             آموزش Next.js بصورت پروژه محور
