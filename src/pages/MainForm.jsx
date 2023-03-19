@@ -7,7 +7,7 @@ import {
     Topbar,
 } from '../components';
 
-const Form = ({ currentForm, setCurrentForm }) => {
+const MainForm = ({ currentForm, setCurrentForm }) => {
     return (
         <>
             {/* TODO edit styles */}
@@ -18,14 +18,16 @@ const Form = ({ currentForm, setCurrentForm }) => {
             <div className='bg-secondaryColor text-center py-4 border-y-2 border-y-topbatLinks'>
                 <p className='text-topbatLinks text-3xl'>حساب کاربری من</p>
             </div>
-            <div className='bg-primaryColor flex items-center justify-center'>
-                <div className='h-96 w-96 rounded-md overflow-x-hidden relative bg-red'>
-                    <FormButtons
-                        currentForm={currentForm}
-                        setCurrentForm={setCurrentForm}
-                    />
-                    <LoginForm />
-                    <RegisterForm />
+            <div className=' bg-primaryColor'>
+                <div className='flex items-center justify-center'>
+                    <div className='w-96 h-[500px] rounded-md overflow-x-hidden relative bg-red'>
+                        <FormButtons
+                            currentForm={currentForm}
+                            setCurrentForm={setCurrentForm}
+                        />
+                        <LoginForm />
+                        <RegisterForm />
+                    </div>
                 </div>
             </div>
             <Footer />
@@ -33,4 +35,4 @@ const Form = ({ currentForm, setCurrentForm }) => {
     );
 };
 
-export default Form;
+export default MainForm;

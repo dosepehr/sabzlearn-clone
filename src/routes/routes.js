@@ -1,4 +1,4 @@
-import { MainPage, CategoryPage, CoursePage, ShopPage, Form } from '../pages';
+import { MainPage, CategoryPage, CoursePage, ShopPage, MainForm } from '../pages';
 export const routes = [
     {
         path: '/',
@@ -18,6 +18,6 @@ export const routes = [
     },
     {
         path: '/login-register',
-        element: <Form />,
+        element: <MainForm />,
     },
 ];
