@@ -2,10 +2,15 @@ import { useContext } from 'react';
 import { mainContext } from '../context';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { loginSchema } from '../validation/userSchema';
+import {toast} from './'
 const LoginForm = () => {
     const { currentForm } = useContext(mainContext);
     const loginUser = (values) => {
         console.log(values);
+        toast.fire({
+            icon: 'success',
+            title: 'ثبت نام کردید',
+        });
     };
     return (
         <>

@@ -2,10 +2,15 @@ import { useContext } from 'react';
 import { mainContext } from '../context';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { registerSchema } from '../validation/userSchema';
+import { toast } from './';
 const RegisterForm = () => {
     const { currentForm } = useContext(mainContext);
     const registerUser = (values) => {
         console.log(values);
+        toast.fire({
+            icon: 'success',
+            title: 'شما وارد شدید ',
+        });
     };
     return (
         <>
