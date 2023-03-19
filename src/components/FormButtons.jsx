@@ -11,7 +11,7 @@ const FormButtons = () => {
     return (
         <>
             <div
-                className='flex my-9 items-center justify-center rounded-3xl shadow-lg shadow-[#ff4d4d4d]'
+                className='flex my-9 items-center justify-center rounded-3xl shadow-lg shadow-[#4dff914d] w-80 mx-auto'
                 onClick={changeForm}
             >
                 <div className='relative'>
@@ -25,10 +25,10 @@ const FormButtons = () => {
                         }
                         `}
                     ></div>
-                    <button className='bg-transparent border-none py-2 px-9 cursor-pointer outline-none relative duration-300'>
+                    <button className='bg-transparent border-none py-2 px-9 cursor-pointer outline-none relative duration-300 text-white'>
                         ورود
                     </button>
-                    <button className='bg-transparent border-none py-2 px-9 cursor-pointer outline-none relative duration-300'>
+                    <button className='bg-transparent border-none py-2 px-9 cursor-pointer outline-none relative duration-300 text-white'>
                         ثبت نام
                     </button>
                 </div>

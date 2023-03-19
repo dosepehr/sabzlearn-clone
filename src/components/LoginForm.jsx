@@ -19,8 +19,8 @@ const LoginForm = () => {
                     className='p-2 border border-[#777] rounded-3xl'
                 />
                 <input
-                    type='رمز ورود'
-                    placeholder='password'
+                    type='password'
+                    placeholder='رمز ورود'
                     className='p-2 border border-[#777] rounded-3xl'
                 />
                 <input
