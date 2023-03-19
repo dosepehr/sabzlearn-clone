@@ -9,7 +9,7 @@
     background-repeat: no-repeat;
 }
 
-
+/* ! ham menu styles */
 .bar {
     position: relative;
     width: 30px;
@@ -73,4 +73,51 @@
     -moz-transform: translateY(0) rotate(-45deg);
     -ms-transform: translateY(0) rotate(-45deg);
     -o-transform: translateY(0) rotate(-45deg);
+}
+
+
+/* ! loader styles */
+.arcade-5 {
+    width: 90px;
+    height: 24px;
+    padding: 2px 0;
+    display: flex;
+    animation: a5-0 3s infinite steps(6);
+    background:
+        linear-gradient(#000 0 0) 0 0/0% 100% no-repeat,
+        radial-gradient(circle 3px, #eeee89 90%, #0000) 0 0/20% 100% #000;
+    overflow: hidden;
+}
+
+.arcade-5::before {
+    content: "";
+    width: 20px;
+    transform: translate(-100%);
+    border-radius: 50%;
+    background: #ffff2d;
+    animation:
+        a5-1 .25s .153s infinite steps(5) alternate,
+        a5-2 3s infinite linear;
+}
+
+@keyframes a5-1 {
+    0% {
+        clip-path: polygon(50% 50%, 100% 0, 100% 0, 0 0, 0 100%, 100% 100%, 100% 100%)
+    }
+
+    100% {
+        clip-path: polygon(50% 50%, 100% 65%, 100% 0, 0 0, 0 100%, 100% 100%, 100% 35%)
+    }
+}
+
+@keyframes a5-2 {
+    100% {
+        transform: translate(90px)
+    }
+}
+
+@keyframes a5-0 {
+    100% {
+        background-size: 120% 100%, 20% 100%
+    }
 }

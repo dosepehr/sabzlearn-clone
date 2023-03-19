@@ -8,4 +8,5 @@ export { default as CourseBox } from './CourseBox';
 export { default as ArticlesSlider } from './ArticlesSlider';
 export { default as Footer } from './Footer';
 export { default as Breadcrumb } from './Breadcrumb';
-export {default as Accordion} from './Accordion'
+export { default as Accordion } from './Accordion'
+export {default as Loader} from './Loader'
