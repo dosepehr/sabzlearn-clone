@@ -9,7 +9,7 @@ const RegisterForm = () => {
                 action=''
                 className={`flex flex-col space-y-4 absolute w-[19rem]
                 duration-300
-                ${currentForm === 'register' ? 'right-full' : 'right-9'}
+                ${currentForm === 'register' ? 'left-9' : 'left-full'}
                 `}
             >
                 <input

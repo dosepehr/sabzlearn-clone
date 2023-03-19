@@ -10,7 +10,7 @@ const LoginForm = () => {
                 action=''
                 className={`flex flex-col space-y-4 absolute w-[19rem]
                 duration-300
-                ${currentForm === 'login' ? 'left-full' : 'left-9'}
+                ${currentForm === 'login' ? 'right-9' : 'right-full'}
                 `}
             >
                 <input
