@@ -21,11 +21,13 @@ const Navbar = () => {
                         <div className={`${menu ? 'bar active' : 'bar'}`}></div>
                     </div>
                     <div className='flex items-center'>
-                        <img
-                            src='/images/logo.png'
-                            alt=''
-                            className='h-10 ml-9'
-                        />
+                        <Link to='/'>
+                            <img
+                                src='/images/logo.png'
+                                alt=''
+                                className='h-10 ml-9'
+                            />
+                        </Link>
                         <div className='hidden min-[930px]:flex'>
                             {navbarData.map((link) => (
                                 <Link
