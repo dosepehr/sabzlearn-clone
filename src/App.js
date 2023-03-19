@@ -5,6 +5,7 @@ import { mainContext } from './context';
 function App() {
     const [menu, setMenu] = useState(false);
     const [expandedIndex, setExpandedIndex] = useState(0);
+    const [currentForm, setCurrentForm] = useState('login');
     const router = useRoutes(routes);
     return (
         <>
@@ -14,6 +15,8 @@ function App() {
                     setMenu,
                     expandedIndex,
                     setExpandedIndex,
+                    currentForm,
+                    setCurrentForm,
                 }}
             >
                 {router}

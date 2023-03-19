@@ -5,4 +5,6 @@ export const mainContext = createContext({
     setMenu: () => {},
     expandedIndex: 0,
     setExpandedIndex: () => {},
+    currentForm: 'login',
+    setCurrentForm: () => {},
 });
