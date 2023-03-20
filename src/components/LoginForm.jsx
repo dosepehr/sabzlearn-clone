@@ -26,7 +26,7 @@ const LoginForm = () => {
                 }}
             >
                 <Form
-                    className={`flex flex-col space-y-4 absolute w-[19rem]
+                    className={`flex flex-col space-y-2 absolute w-[19rem]
                 duration-300
                 ${currentForm === 'login' ? 'right-9' : 'right-full'}
                 `}

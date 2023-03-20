@@ -17,6 +17,7 @@ const RegisterForm = () => {
             {/* if user requested for register form ,it will slide from right */}
             <Formik
                 initialValues={{
+                    name: '',
                     username: '',
                     email: '',
                     password: '',
@@ -28,11 +29,20 @@ const RegisterForm = () => {
             >
                 <Form
                     action=''
-                    className={`flex flex-col space-y-4 absolute w-[19rem]
+                    className={`flex flex-col space-y-2 absolute w-[19rem]
                 duration-300
                 ${currentForm === 'register' ? 'left-9' : 'left-full'}
                 `}
                 >
+                    <Field
+                        name='name'
+                        type='text'
+                        placeholder='نام و نام خانوادگی'
+                        className='p-2 border border-[#777] rounded-3xl'
+                    />
+                    <span className='text-red-500'>
+                        <ErrorMessage name='name' />
+                    </span>
                     <Field
                         name='username'
                         type='text'
