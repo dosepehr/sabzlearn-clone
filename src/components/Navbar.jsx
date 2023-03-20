@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { Menu } from './index';
 import { Link } from 'react-router-dom';
 const Navbar = () => {
-    const { menu, setMenu, userInfo } = useContext(mainContext);
+    const { menu, setMenu, userInfo, isLoggedIn } = useContext(mainContext);
     const menuHandler = () => {
         setMenu((prev) => !prev);
     };
@@ -48,10 +48,16 @@ const Navbar = () => {
                     </div>
                     <div className='flex items-center '>
                         <div className='flex items-center p-2 bg-blue-500 text-white rounded-md'>
-                            {Object.keys(userInfo).length > 0 && (
+                            {Object.keys(userInfo).length > 0 && isLoggedIn ? (
                                 <p className='ml-2 hidden min-[930px]:block'>
                                     {userInfo.username}
                                 </p>
+                            ) : (
+                                <Link to='/login-register'>
+                                    <p className='ml-2 hidden min-[930px]:block'>
+                                        ورود / ثبت نام
+                                    </p>
+                                </Link>
                             )}
                             <BsFillPersonFill />
                         </div>

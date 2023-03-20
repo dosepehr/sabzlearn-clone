@@ -4,14 +4,16 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { registerSchema } from '../validation/userSchema';
 import { toast } from './';
 import { registerUser } from '../services';
+import { useNavigate } from 'react-router-dom';
 const RegisterForm = () => {
-    const { currentForm, login} = useContext(mainContext);
+    const navigate = useNavigate();
+    const { currentForm, login } = useContext(mainContext);
     const registerUserHandler = async (values) => {
         const { data } = await registerUser({
             ...values,
             confirmPassword: values.password,
         });
-        console.log(data)
+        navigate('/');
         login(data.user, data.accessToken);
         toast.fire({
             icon: 'success',

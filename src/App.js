@@ -16,7 +16,6 @@ function App() {
     const login = (data, token) => {
         setToken(token);
         localStorage.setItem('userToken', token);
-        setIsLoggedIn(true);
         setUserInfo(data);
     };
     useEffect(() => {
@@ -24,7 +23,8 @@ function App() {
             const userToken = localStorage.getItem('userToken');
             if (userToken) {
                 const { data } = await getMe(userToken);
-                setUserInfo(data)
+                setUserInfo(data);
+                setIsLoggedIn(true);
             }
         };
         getUserInfo();
