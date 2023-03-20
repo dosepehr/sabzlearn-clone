@@ -3,10 +3,15 @@ import { mainContext } from '../context';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { registerSchema } from '../validation/userSchema';
 import { toast } from './';
+import { registerUser } from '../services';
 const RegisterForm = () => {
     const { currentForm } = useContext(mainContext);
-    const registerUser = (values) => {
-        console.log(values);
+    const registerUserHandler = async (values) => {
+        const { data } = await registerUser({
+            ...values,
+            confirmPassword: values.password,
+        });
+        console.log(data);
         toast.fire({
             icon: 'success',
             title: 'شما وارد شدید ',
@@ -24,11 +29,10 @@ const RegisterForm = () => {
                 }}
                 validationSchema={registerSchema}
                 onSubmit={(values) => {
-                    registerUser(values);
+                    registerUserHandler(values);
                 }}
             >
                 <Form
-                    action=''
                     className={`flex flex-col space-y-2 absolute w-[19rem]
                 duration-300
                 ${currentForm === 'register' ? 'left-9' : 'left-full'}
