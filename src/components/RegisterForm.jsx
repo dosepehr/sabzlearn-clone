@@ -5,13 +5,13 @@ import { registerSchema } from '../validation/userSchema';
 import { toast } from './';
 import { registerUser } from '../services';
 const RegisterForm = () => {
-    const { currentForm } = useContext(mainContext);
+    const { currentForm, login} = useContext(mainContext);
     const registerUserHandler = async (values) => {
         const { data } = await registerUser({
             ...values,
             confirmPassword: values.password,
         });
-        console.log(data);
+        login(data.user, data.accessToken);
         toast.fire({
             icon: 'success',
             title: 'شما وارد شدید ',

@@ -6,7 +6,6 @@ import {toast} from './'
 const LoginForm = () => {
     const { currentForm } = useContext(mainContext);
     const loginUser = (values) => {
-        console.log(values);
         toast.fire({
             icon: 'success',
             title: 'ثبت نام کردید',
