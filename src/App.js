@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRoutes } from 'react-router-dom';
 import { routes } from './routes/routes';
 import { mainContext } from './context';
+import { getMe } from './services';
 function App() {
     const router = useRoutes(routes);
     // * states
@@ -10,14 +11,24 @@ function App() {
     const [currentForm, setCurrentForm] = useState('login');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [token, setToken] = useState(null);
-    const [userInfo, setUserInfo] = useState(null);
+    const [userInfo, setUserInfo] = useState({});
 
-    const login = (data,token) => {
-        setToken(token)
-        localStorage.setItem('userToken', token)
-        setIsLoggedIn(true)
-        setUserInfo(data)
-    }
+    const login = (data, token) => {
+        setToken(token);
+        localStorage.setItem('userToken', token);
+        setIsLoggedIn(true);
+        setUserInfo(data);
+    };
+    useEffect(() => {
+        const getUserInfo = async () => {
+            const userToken = localStorage.getItem('userToken');
+            if (userToken) {
+                const { data } = await getMe(userToken);
+                setUserInfo(data)
+            }
+        };
+        getUserInfo();
+    }, []);
     return (
         <>
             <mainContext.Provider
@@ -34,7 +45,7 @@ function App() {
                     setToken,
                     userInfo,
                     setUserInfo,
-                    login
+                    login,
                 }}
             >
                 {router}

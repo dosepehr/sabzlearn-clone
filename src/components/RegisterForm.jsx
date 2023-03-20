@@ -11,6 +11,7 @@ const RegisterForm = () => {
             ...values,
             confirmPassword: values.password,
         });
+        console.log(data)
         login(data.user, data.accessToken);
         toast.fire({
             icon: 'success',

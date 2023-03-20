@@ -18,20 +18,22 @@ const Topbar = () => {
                     <p className='text-white ml-2 font-semibold'>
                         sabzlearn@gmail.com
                     </p>
-                    {topbarIcons.map((icon,index) => (
-                        <div key={index} >
-                            <span
-                                className='mx-1 text-white text-sm '
-                                id={`link-${icon.id}`}
-                            >
-                                {icon.icon}
-                            </span>
-                            <ReactTooltip
-                                anchorId={`link-${icon.id}`}
-                                place='bottom'
-                                content={`مارا در ${icon.tooltip} دنبال کنید`}
-                            />
-                        </div>
+                    {topbarIcons.map((icon, index) => (
+                        <>
+                            <div key={index}  className='mx-1 text-white text-sm'>
+                                <span
+                                    className='mx-1 text-white text-sm'
+                                    id={`link-${icon.id}`}
+                                >
+                                    {icon.icon}
+                                </span>
+                                <ReactTooltip
+                                    anchorId={`link-${icon.id}`}
+                                    place='bottom'
+                                    content={`مارا در ${icon.tooltip} دنبال کنید`}
+                                />
+                            </div>
+                        </>
                     ))}
                 </div>
             </div>

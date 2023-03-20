@@ -6,3 +6,11 @@ export const registerUser = (newUserInfo) => {
     const url = `${BASE_URL}/auth/register`;
     return axios.post(url, newUserInfo);
 };
+export const getMe = (token) => {
+    const url = `${BASE_URL}/auth/me`;
+    return axios.get(url, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
+};
