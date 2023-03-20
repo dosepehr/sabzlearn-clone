@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useRoutes } from 'react-router-dom';
+import { useRoutes, useNavigate } from 'react-router-dom';
 import { routes } from './routes/routes';
 import { mainContext } from './context';
 import { getMe } from './services';
 function App() {
+    const navigate = useNavigate();
     const router = useRoutes(routes);
     // * states
     const [menu, setMenu] = useState(false);
@@ -25,10 +26,12 @@ function App() {
                 const { data } = await getMe(userToken);
                 setUserInfo(data);
                 setIsLoggedIn(true);
+            } else {
+                navigate('/login-register');
             }
         };
         getUserInfo();
-    }, []);
+    }, [navigate]);
     return (
         <>
             <mainContext.Provider
