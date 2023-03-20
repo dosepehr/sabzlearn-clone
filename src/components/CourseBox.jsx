@@ -8,7 +8,7 @@ const CourseBox = () => {
                     <div className='h-full w-full'>
                         <Image
                             src='/images/sabz-next.png'
-                            fallback={<Shimmer />}
+                            fallback={<Shimmer height={100} width={100} />}
                         />
                     </div>
                     <div className='px-5 pb-5'>

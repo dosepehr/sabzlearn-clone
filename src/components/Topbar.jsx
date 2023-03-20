@@ -18,10 +18,9 @@ const Topbar = () => {
                     <p className='text-white ml-2 font-semibold'>
                         sabzlearn@gmail.com
                     </p>
-                    {topbarIcons.map((icon) => (
-                        <>
+                    {topbarIcons.map((icon,index) => (
+                        <div key={index} >
                             <span
-                                key={icon.id}
                                 className='mx-1 text-white text-sm '
                                 id={`link-${icon.id}`}
                             >
@@ -32,7 +31,7 @@ const Topbar = () => {
                                 place='bottom'
                                 content={`مارا در ${icon.tooltip} دنبال کنید`}
                             />
-                        </>
+                        </div>
                     ))}
                 </div>
             </div>
