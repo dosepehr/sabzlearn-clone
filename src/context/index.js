@@ -18,6 +18,8 @@ export const mainContext = createContext({
     recaptchaConfirmed: false,
     isRecaptchaConfirmed: () => {},
     topbarLinks: [],
-    setTopbarlinks: () => { },
-    navbarLinks:[],
+    setTopbarlinks: () => {},
+    navbarLinks: [],
+    course: {},
+    setCourse: () => {},
 });

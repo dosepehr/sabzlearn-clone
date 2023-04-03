@@ -1,7 +1,27 @@
 import { Image, Shimmer } from 'react-shimmer';
 import { Topbar, Navbar, Breadcrumb, Accordion, Footer } from '../components';
+import { getCourse } from '../services';
+import { useContext, useEffect } from 'react';
+import { mainContext } from '../context';
+import { useParams } from 'react-router-dom';
 
 const CoursePage = () => {
+    const { courseName } = useParams();
+    // TODO get token from state
+    const { course, setCourse, token } = useContext(mainContext);
+
+    useEffect(() => {
+        const fetchCourseData = async () => {
+            const { data } = await getCourse(
+                courseName,
+                localStorage.getItem('userToken')
+            );
+            setCourse(data)
+            console.log(data)
+        };
+        fetchCourseData();
+    }, []);
+
     const sections = [
         {
             title: 'فصل اول',

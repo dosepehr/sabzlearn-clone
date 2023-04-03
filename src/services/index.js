@@ -29,3 +29,17 @@ export const getNavbarLinks = () => {
     const url = `${BASE_URL}/menus`;
     return axios.get(url);
 };
+
+export const getCourses = () => {
+    const url = `${BASE_URL}/courses`;
+    return axios.get(url);
+};
+
+export const getCourse = (courseName, token) => {
+    const url = `${BASE_URL}/courses/${courseName}`;
+    return axios.post(url, '', {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
+};

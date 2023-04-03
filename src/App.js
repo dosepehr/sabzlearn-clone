@@ -16,6 +16,8 @@ function App() {
     const [recaptchaConfirmed, isRecaptchaConfirmed] = useState(false);
     const [topbarLinks, setTopbarlinks] = useState([]);
     const [navbarLinks, setNavbarLinks] = useState([]);
+    const [course, setCourse] = useState([]);
+
     const login = (data, token) => {
         setIsLoggedIn(true);
         setToken(token);
@@ -81,7 +83,9 @@ function App() {
                     isRecaptchaConfirmed,
                     topbarLinks,
                     setTopbarlinks,
-                    navbarLinks
+                    navbarLinks,
+                    course,
+                    setCourse
                 }}
             >
                 {router}
