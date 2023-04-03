@@ -1,4 +1,3 @@
-import { navbarData } from '../constants/navbarData';
 import { FaShoppingBasket } from 'react-icons/fa';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { mainContext } from '../context';
@@ -6,11 +5,13 @@ import { useContext } from 'react';
 import { Menu } from './index';
 import { Link } from 'react-router-dom';
 const Navbar = () => {
-    const { menu, setMenu, userInfo, isLoggedIn } = useContext(mainContext);
+    const { menu, setMenu, userInfo, isLoggedIn, navbarLinks } =
+        useContext(mainContext);
     const menuHandler = () => {
         setMenu((prev) => !prev);
     };
     return (
+        // TODO edit menues style
         <>
             <div className='border-b-[1px] border-b-white border-opacity-30'>
                 <div className='max-w-[1080px] items-center justify-between mx-auto p-2 flex'>
@@ -29,14 +30,30 @@ const Navbar = () => {
                             />
                         </Link>
                         <div className='hidden min-[930px]:flex'>
-                            {navbarData.map((link) => (
-                                <Link
-                                    to={`/categories/${link.href}`}
-                                    key={link.id}
-                                    className='mx-2 text-topbatLinks'
-                                >
-                                    {link.title}
-                                </Link>
+                            {navbarLinks.map((link) => (
+                                <div className='group'>
+                                    <div className='relative'>
+                                        <Link
+                                            to={`/categories/${link.href}`}
+                                            key={link._id}
+                                            className='mx-2 text-topbatLinks  peer'
+                                        >
+                                            {link.title}
+                                        </Link>
+                                        {link.submenus.length > 0 && (
+                                            <div className='absolute bg-[#15151c] p-4 rounded-xl w-max flex flex-col space-y-4 opacity-0 group-hover:opacity-100 group-hover:z-50 duration-300 '>
+                                                {link.submenus.map((item) => (
+                                                    <Link
+                                                        to={item.href}
+                                                        className='text-topbatLinks'
+                                                    >
+                                                        {item.title}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
                             ))}
                             <Link
                                 to={`/shop/`}

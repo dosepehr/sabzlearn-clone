@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRoutes, useNavigate } from 'react-router-dom';
 import { routes } from './routes/routes';
 import { mainContext } from './context';
-import { getMe, getTopbarLinks } from './services';
+import { getMe, getTopbarLinks, getNavbarLinks } from './services';
 function App() {
     const navigate = useNavigate();
     const router = useRoutes(routes);
@@ -15,6 +15,7 @@ function App() {
     const [userInfo, setUserInfo] = useState({});
     const [recaptchaConfirmed, isRecaptchaConfirmed] = useState(false);
     const [topbarLinks, setTopbarlinks] = useState([]);
+    const [navbarLinks, setNavbarLinks] = useState([]);
     const login = (data, token) => {
         setIsLoggedIn(true);
         setToken(token);
@@ -50,6 +51,14 @@ function App() {
         getUserInfo();
         fetchTopbarLinks();
     }, [navigate]);
+
+    useEffect(() => {
+        const fetchNavbarLinks = async () => {
+            const { data } = await getNavbarLinks();
+            setNavbarLinks(data);
+        };
+        fetchNavbarLinks();
+    }, []);
     return (
         <>
             <mainContext.Provider
@@ -72,6 +81,7 @@ function App() {
                     isRecaptchaConfirmed,
                     topbarLinks,
                     setTopbarlinks,
+                    navbarLinks
                 }}
             >
                 {router}

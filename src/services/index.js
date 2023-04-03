@@ -24,3 +24,8 @@ export const getTopbarLinks = () => {
     const url = `${BASE_URL}/menus/topbar`;
     return axios.get(url);
 };
+
+export const getNavbarLinks = () => {
+    const url = `${BASE_URL}/menus`;
+    return axios.get(url);
+};
