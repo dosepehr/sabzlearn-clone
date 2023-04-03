@@ -19,6 +19,11 @@ function App() {
         localStorage.setItem('userToken', token);
         setUserInfo(data);
     };
+    const logout = () => {
+        setToken(null);
+        setUserInfo({});
+        localStorage.removeItem('userToken');
+    };
     useEffect(() => {
         const getUserInfo = async () => {
             const userToken = localStorage.getItem('userToken');
@@ -49,6 +54,7 @@ function App() {
                     userInfo,
                     setUserInfo,
                     login,
+                    logout,
                 }}
             >
                 {router}
