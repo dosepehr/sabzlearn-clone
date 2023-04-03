@@ -34,7 +34,7 @@ const Navbar = () => {
                                 <div className='group'>
                                     <div className='relative'>
                                         <Link
-                                            to={`/categories/${link.href}`}
+                                            to={`/category-info/${link.href}`}
                                             key={link._id}
                                             className='mx-2 text-topbatLinks  peer'
                                         >

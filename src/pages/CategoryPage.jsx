@@ -1,9 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 import { Topbar, Navbar, Footer, Courses, Breadcrumb } from '../components';
-import { navbarData } from '../constants/navbarData';
+import { useContext } from 'react';
+import { mainContext } from '../context';
 const CategoryPage = () => {
+    const { navbarLinks } = useContext(mainContext);
     const { categoryName } = useParams();
-    const category = navbarData.filter((data) => data.href === categoryName);
+    const category = navbarLinks.filter((data) => data.href === categoryName);
     return (
         <>
             {/* TODO add pagination */}
@@ -23,7 +25,7 @@ const CategoryPage = () => {
                         ]}
                     />
                     <div className='w-fit space-y-5 '>
-                        {navbarData.map(
+                        {navbarLinks.map(
                             (link) =>
                                 link.href !== categoryName && (
                                     <Link

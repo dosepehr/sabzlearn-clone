@@ -3,7 +3,7 @@ import { Image, Shimmer } from 'react-shimmer';
 const CourseBox = () => {
     return (
         <>
-            <Link to={`/courses/next`}>
+            <Link to={`/course-info/next`}>
                 <div className='w-full rounded-xl bg-secondaryColor overflow-hidden'>
                     <div className='h-full w-full'>
                         <Image

@@ -12,11 +12,11 @@ export const routes = [
         element: <MainPage />,
     },
     {
-        path: '/categories/:categoryName',
+        path: '/category-info/:categoryName',
         element: <CategoryPage />,
     },
     {
-        path: '/courses/:courseName',
+        path: '/course-info/:courseName',
         element: <CoursePage />,
     },
     {
