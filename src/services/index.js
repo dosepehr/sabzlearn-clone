@@ -14,3 +14,8 @@ export const getMe = (token) => {
         },
     });
 };
+
+export const loginUser = (userInfo) => {
+    const url = `${BASE_URL}/auth/login`;
+    return axios.post(url, userInfo);
+};

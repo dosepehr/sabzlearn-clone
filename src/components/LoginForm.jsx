@@ -1,15 +1,33 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { mainContext } from '../context';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { loginSchema } from '../validation/userSchema';
-import {toast} from './'
+import { toast } from './';
+import { loginUser } from '../services';
 const LoginForm = () => {
-    const { currentForm } = useContext(mainContext);
-    const loginUser = (values) => {
-        toast.fire({
-            icon: 'success',
-            title: 'ثبت نام کردید',
-        });
+    const navigate = useNavigate();
+    const { currentForm, login } = useContext(mainContext);
+    const handleLoginUser = async (values) => {
+        try {
+            const userInfo = {
+                identifier: values.username,
+                password: values.password,
+            };
+            const { data, status } = await loginUser(userInfo);
+            toast.fire({
+                icon: 'success',
+                title: 'خوش آمدید :))',
+            });
+            console.log(status);
+            login(values.username, data.accessToken);
+            navigate('/');
+        } catch (err) {
+            toast.fire({
+                icon: 'error',
+                title: 'کاربری با این نام یافت نشد',
+            });
+        }
     };
     return (
         <>
@@ -21,7 +39,7 @@ const LoginForm = () => {
                 }}
                 validationSchema={loginSchema}
                 onSubmit={(values) => {
-                    loginUser(values);
+                    handleLoginUser(values);
                 }}
             >
                 <Form
@@ -31,7 +49,7 @@ const LoginForm = () => {
                 `}
                 >
                     <Field
-                    name='username'
+                        name='username'
                         type='text'
                         placeholder='نام کاربری'
                         className='p-2 border border-[#777] rounded-3xl'
@@ -40,7 +58,7 @@ const LoginForm = () => {
                         <ErrorMessage name='username' />
                     </span>
                     <Field
-                    name='password'
+                        name='password'
                         type='password'
                         placeholder='رمز ورود'
                         className='p-2 border border-[#777] rounded-3xl'

@@ -17,7 +17,7 @@ const RegisterForm = () => {
         login(data.user, data.accessToken);
         toast.fire({
             icon: 'success',
-            title: 'شما وارد شدید ',
+            title: 'خوش آمدید :))',
         });
     };
     return (

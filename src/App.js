@@ -15,11 +15,13 @@ function App() {
     const [userInfo, setUserInfo] = useState({});
 
     const login = (data, token) => {
+        setIsLoggedIn(true)
         setToken(token);
         localStorage.setItem('userToken', token);
         setUserInfo(data);
     };
     const logout = () => {
+        setIsLoggedIn(false)
         setToken(null);
         setUserInfo({});
         localStorage.removeItem('userToken');
