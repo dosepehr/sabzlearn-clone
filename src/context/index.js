@@ -2,16 +2,17 @@ import { createContext } from 'react';
 
 export const mainContext = createContext({
     menu: false,
-    setMenu: () => { },
+    setMenu: () => {},
     expandedIndex: 0,
-    setExpandedIndex: () => { },
+    setExpandedIndex: () => {},
     currentForm: 'login',
-    setCurrentForm: () => { },
+    setCurrentForm: () => {},
     isLoggedIn: false,
-    setIsLoggedIn: () => { },
+    setIsLoggedIn: () => {},
     token: null,
-    setToken: () => { },
+    setToken: () => {},
     userInfo: null,
-    setUserInfo: () => { },
+    setUserInfo: () => {},
     login: () => {},
+    logout: () => {},
 });

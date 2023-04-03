@@ -49,9 +49,11 @@ const Navbar = () => {
                     <div className='flex items-center '>
                         <div className='flex items-center p-2 bg-blue-500 text-white rounded-md'>
                             {Object.keys(userInfo).length > 0 && isLoggedIn ? (
-                                <p className='ml-2 hidden min-[930px]:block'>
-                                    {userInfo.username}
-                                </p>
+                                <Link to='/account'>
+                                    <p className='ml-2 hidden min-[930px]:block'>
+                                        {userInfo.username}
+                                    </p>
+                                </Link>
                             ) : (
                                 <Link to='/login-register'>
                                     <p className='ml-2 hidden min-[930px]:block'>
