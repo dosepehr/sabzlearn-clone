@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRoutes, useNavigate } from 'react-router-dom';
 import { routes } from './routes/routes';
 import { mainContext } from './context';
-import { getMe, getTopbarLinks, getNavbarLinks } from './services';
+import { getMe, getTopbarLinks, getNavbarLinks, getCourses } from './services';
 function App() {
     const navigate = useNavigate();
     const router = useRoutes(routes);
@@ -17,6 +17,7 @@ function App() {
     const [topbarLinks, setTopbarlinks] = useState([]);
     const [navbarLinks, setNavbarLinks] = useState([]);
     const [course, setCourse] = useState([]);
+    const [courses, setCourses] = useState([]);
 
     const login = (data, token) => {
         setIsLoggedIn(true);
@@ -59,6 +60,13 @@ function App() {
             const { data } = await getNavbarLinks();
             setNavbarLinks(data);
         };
+        const fetchCoursesData = async () => {
+            const { data } = await getCourses(
+                localStorage.getItem('userToken')
+            );
+            setCourses(data);
+        };
+        fetchCoursesData();
         fetchNavbarLinks();
     }, []);
     return (
@@ -85,7 +93,8 @@ function App() {
                     setTopbarlinks,
                     navbarLinks,
                     course,
-                    setCourse
+                    setCourse,
+                    courses
                 }}
             >
                 {router}

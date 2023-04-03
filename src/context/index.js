@@ -22,4 +22,5 @@ export const mainContext = createContext({
     navbarLinks: [],
     course: {},
     setCourse: () => {},
+    courses: [],
 });

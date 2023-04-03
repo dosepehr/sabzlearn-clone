@@ -30,9 +30,13 @@ export const getNavbarLinks = () => {
     return axios.get(url);
 };
 
-export const getCourses = () => {
+export const getCourses = (token) => {
     const url = `${BASE_URL}/courses`;
-    return axios.get(url);
+    return axios.get(url, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
 };
 
 export const getCourse = (courseName, token) => {
