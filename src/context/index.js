@@ -17,4 +17,6 @@ export const mainContext = createContext({
     logout: () => {},
     recaptchaConfirmed: false,
     isRecaptchaConfirmed: () => {},
+    topbarLinks: [],
+    setTopbarlinks: () => {},
 });

@@ -19,3 +19,8 @@ export const loginUser = (userInfo) => {
     const url = `${BASE_URL}/auth/login`;
     return axios.post(url, userInfo);
 };
+
+export const getTopbarLinks = () => {
+    const url = `${BASE_URL}/menus/topbar`;
+    return axios.get(url);
+};

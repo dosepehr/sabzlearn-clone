@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRoutes, useNavigate } from 'react-router-dom';
 import { routes } from './routes/routes';
 import { mainContext } from './context';
-import { getMe } from './services';
+import { getMe, getTopbarLinks } from './services';
 function App() {
     const navigate = useNavigate();
     const router = useRoutes(routes);
@@ -14,7 +14,7 @@ function App() {
     const [token, setToken] = useState(null);
     const [userInfo, setUserInfo] = useState({});
     const [recaptchaConfirmed, isRecaptchaConfirmed] = useState(false);
-
+    const [topbarLinks, setTopbarlinks] = useState([]);
     const login = (data, token) => {
         setIsLoggedIn(true);
         setToken(token);
@@ -39,7 +39,16 @@ function App() {
                 navigate('/login-register');
             }
         };
+        const fetchTopbarLinks = async () => {
+            const { data } = await getTopbarLinks();
+            const shuffledData = [...data]
+                .sort(() => 0.5 - Math.random())
+                .slice(0, 5);
+            setTopbarlinks(shuffledData);
+        };
+
         getUserInfo();
+        fetchTopbarLinks();
     }, [navigate]);
     return (
         <>
@@ -61,6 +70,8 @@ function App() {
                     logout,
                     recaptchaConfirmed,
                     isRecaptchaConfirmed,
+                    topbarLinks,
+                    setTopbarlinks,
                 }}
             >
                 {router}
