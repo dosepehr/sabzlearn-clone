@@ -13,18 +13,20 @@ function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [token, setToken] = useState(null);
     const [userInfo, setUserInfo] = useState({});
+    const [recaptchaConfirmed, isRecaptchaConfirmed] = useState(false);
 
     const login = (data, token) => {
-        setIsLoggedIn(true)
+        setIsLoggedIn(true);
         setToken(token);
         localStorage.setItem('userToken', token);
         setUserInfo(data);
     };
     const logout = () => {
-        setIsLoggedIn(false)
+        setIsLoggedIn(false);
         setToken(null);
         setUserInfo({});
         localStorage.removeItem('userToken');
+        navigate('/login-register');
     };
     useEffect(() => {
         const getUserInfo = async () => {
@@ -57,6 +59,8 @@ function App() {
                     setUserInfo,
                     login,
                     logout,
+                    recaptchaConfirmed,
+                    isRecaptchaConfirmed,
                 }}
             >
                 {router}

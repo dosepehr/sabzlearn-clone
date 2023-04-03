@@ -15,4 +15,6 @@ export const mainContext = createContext({
     setUserInfo: () => {},
     login: () => {},
     logout: () => {},
+    recaptchaConfirmed: false,
+    isRecaptchaConfirmed: () => {},
 });

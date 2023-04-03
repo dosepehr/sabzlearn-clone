@@ -5,20 +5,27 @@ import { registerSchema } from '../validation/userSchema';
 import { toast } from './';
 import { registerUser } from '../services';
 import { useNavigate } from 'react-router-dom';
+import ReCAPTCHA from 'react-google-recaptcha';
 const RegisterForm = () => {
     const navigate = useNavigate();
-    const { currentForm, login } = useContext(mainContext);
+    const { currentForm, login, recaptchaConfirmed, isRecaptchaConfirmed } =
+        useContext(mainContext);
     const registerUserHandler = async (values) => {
-        const { data } = await registerUser({
-            ...values,
-            confirmPassword: values.password,
-        });
-        navigate('/');
-        login(data.user, data.accessToken);
-        toast.fire({
-            icon: 'success',
-            title: 'خوش آمدید :))',
-        });
+        if (recaptchaConfirmed) {
+            const { data } = await registerUser({
+                ...values,
+                confirmPassword: values.password,
+            });
+            navigate('/');
+            login(data.user, data.accessToken);
+            toast.fire({
+                icon: 'success',
+                title: 'خوش آمدید :))',
+            });
+        }
+    };
+    const handleRecaptcha = () => {
+        isRecaptchaConfirmed(true);
     };
     return (
         <>
@@ -77,6 +84,10 @@ const RegisterForm = () => {
                     <span className='text-red-500'>
                         <ErrorMessage name='password' />
                     </span>
+                    <ReCAPTCHA
+                        sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+                        onChange={handleRecaptcha}
+                    />
                     <button
                         type='submit'
                         className='text-[#333] text-lg rounded-3xl p-2 bg-gradient-to-r from-[#00f739] to-[#50cc00]'

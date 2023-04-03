@@ -5,29 +5,35 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { loginSchema } from '../validation/userSchema';
 import { toast } from './';
 import { loginUser } from '../services';
+import ReCAPTCHA from 'react-google-recaptcha';
 const LoginForm = () => {
     const navigate = useNavigate();
-    const { currentForm, login } = useContext(mainContext);
+    const { currentForm, login, recaptchaConfirmed, isRecaptchaConfirmed } =
+        useContext(mainContext);
     const handleLoginUser = async (values) => {
         try {
-            const userInfo = {
-                identifier: values.username,
-                password: values.password,
-            };
-            const { data, status } = await loginUser(userInfo);
-            toast.fire({
-                icon: 'success',
-                title: 'خوش آمدید :))',
-            });
-            console.log(status);
-            login(values.username, data.accessToken);
-            navigate('/');
+            if (recaptchaConfirmed) {
+                const userInfo = {
+                    identifier: values.username,
+                    password: values.password,
+                };
+                const { data } = await loginUser(userInfo);
+                toast.fire({
+                    icon: 'success',
+                    title: 'خوش آمدید :))',
+                });
+                login(values.username, data.accessToken);
+                navigate('/');
+            }
         } catch (err) {
             toast.fire({
                 icon: 'error',
                 title: 'کاربری با این نام یافت نشد',
             });
         }
+    };
+    const handleRecaptcha = () => {
+        isRecaptchaConfirmed(true);
     };
     return (
         <>
@@ -66,6 +72,10 @@ const LoginForm = () => {
                     <span className='text-red-500'>
                         <ErrorMessage name='password' />
                     </span>
+                    <ReCAPTCHA
+                        sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+                        onChange={handleRecaptcha}
+                    />
                     <button
                         type='submit'
                         className='text-[#333] text-lg rounded-3xl p-2 bg-gradient-to-r from-[#00f739] to-[#50cc00]'
