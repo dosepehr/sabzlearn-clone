@@ -5,6 +5,7 @@ import {
     ShopPage,
     MainForm,
     AccountPage,
+    NotFound,
 } from '../pages';
 export const routes = [
     {
@@ -30,5 +31,9 @@ export const routes = [
     {
         path: '/account',
         element: <AccountPage />,
+    },
+    {
+        path: '*',
+        element: <NotFound />,
     },
 ];

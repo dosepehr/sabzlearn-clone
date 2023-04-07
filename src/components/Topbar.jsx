@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 const Topbar = () => {
     const { topbarLinks } = useContext(mainContext);
-
+    console.log(topbarLinks);
     return (
         <div className='bg-[#00000024] px-2'>
             <div className='flex max-[930px]:hidden items-center justify-between p-2 mx-auto w-full max-w-[1080px]'>
