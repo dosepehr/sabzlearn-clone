@@ -30,20 +30,20 @@ const Navbar = () => {
                             />
                         </Link>
                         <div className='hidden min-[930px]:flex'>
-                            {navbarLinks.map((link) => (
-                                <div className='group'>
+                            {navbarLinks.map((link,index) => (
+                                <div className='group' key={link._id}>
                                     <div className='relative'>
                                         <Link
                                             to={`/category-info/${link.href}`}
-                                            key={link._id}
                                             className='mx-2 text-topbatLinks  peer'
                                         >
                                             {link.title}
                                         </Link>
                                         {link.submenus.length > 0 && (
                                             <div className='absolute bg-[#15151c] p-4 rounded-xl w-max flex flex-col space-y-4 opacity-0 group-hover:opacity-100 group-hover:z-50 duration-300 '>
-                                                {link.submenus.map((item) => (
+                                                {link.submenus.map((item,index) => (
                                                     <Link
+                                                        key={index}
                                                         to={item.href}
                                                         className='text-topbatLinks'
                                                     >

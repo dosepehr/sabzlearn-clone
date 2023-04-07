@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import { mainContext } from '../context';
 const Courses = () => {
     const { courses } = useContext(mainContext);
-    console.log(courses)
     return (
         <>
             <div className=' bg-primaryColor'>

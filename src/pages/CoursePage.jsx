@@ -17,7 +17,6 @@ const CoursePage = () => {
                 localStorage.getItem('userToken')
             );
             setCourse(data);
-            console.log(data);
         };
         fetchCourseData();
     }, []);
@@ -38,6 +37,7 @@ const CoursePage = () => {
             ],
         },
     ];
+
     return (
         <>
             {Object.keys(course).length > 0 && (
@@ -62,7 +62,9 @@ const CoursePage = () => {
                                 <div className='h-full w-full'>
                                     <Image
                                         src='/images/sabz-next.png'
-                                        fallback={<Shimmer />}
+                                        fallback={
+                                            <Shimmer width={200} height={200} />
+                                        }
                                     />
                                 </div>
                             </div>
@@ -88,7 +90,7 @@ const CoursePage = () => {
                             <div className='bg-primaryColor border-r-topbatLinks border-dashed border-r-2'>
                                 <div className='text-topbatLinks px-3 py-4'>
                                     <p className='text-sm'>
-                                        مدرس :   {course.creator.name}
+                                        مدرس : {course.creator.name}
                                     </p>
                                 </div>
                             </div>
