@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* primaryColor: '#242531',
+secondaryColor: '#2f3040', */
+body {
+    min-height: 100vh;
+    background-color: #2f3040
+}
 
 .top {
     background: linear-gradient(#2f3041d7, #2f3041d7), url('../public/images/background-header-scaled.jpg');

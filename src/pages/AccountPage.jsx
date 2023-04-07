@@ -37,7 +37,7 @@ const AccountPage = () => {
             </div>
             <div className='bg-primaryColor pt-5'>
                 <div className='max-w-[1080px] mx-auto px-12 space-y-3'>
-                    <p className='text-topbatLinks' onClick={handleLogout}>
+                    <p className='text-topbatLinks py-40' onClick={handleLogout}>
                         خروج از حساب کاربری ؟
                     </p>
                 </div>

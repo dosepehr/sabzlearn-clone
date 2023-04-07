@@ -23,4 +23,6 @@ export const mainContext = createContext({
     course: {},
     setCourse: () => {},
     courses: [],
+    loading: false,
+    setLoading: () => {},
 });

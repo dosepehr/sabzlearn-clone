@@ -18,6 +18,7 @@ function App() {
     const [navbarLinks, setNavbarLinks] = useState([]);
     const [course, setCourse] = useState([]);
     const [courses, setCourses] = useState([]);
+    const [loading,setLoading]=useState(false)
 
     const login = (data, token) => {
         setIsLoggedIn(true);
@@ -94,7 +95,9 @@ function App() {
                     navbarLinks,
                     course,
                     setCourse,
-                    courses
+                    courses,
+                    loading,
+                    setLoading
                 }}
             >
                 {router}
