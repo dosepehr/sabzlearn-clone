@@ -5,3 +5,4 @@ export { default as ShopPage } from './ShopPage';
 export { default as MainForm } from './MainForm';
 export { default as AccountPage } from './AccountPage';
 export { default as NotFound } from './NotFound';
+export { default as ArticlePage } from './ArticlePage';

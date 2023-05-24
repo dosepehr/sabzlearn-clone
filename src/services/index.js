@@ -56,3 +56,12 @@ export const getArticles = (token) => {
         },
     });
 };
+
+export const getArticle = (articleName, token) => {
+    const url = `${BASE_URL}/articles/${articleName}`;
+    return axios.get(url,{
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
+};

@@ -6,6 +6,7 @@ import {
     MainForm,
     AccountPage,
     NotFound,
+    ArticlePage,
 } from '../pages';
 export const routes = [
     {
@@ -35,5 +36,9 @@ export const routes = [
     {
         path: '*',
         element: <NotFound />,
+    },
+    {
+        path: '/articles/:articleName',
+        element: <ArticlePage />,
     },
 ];

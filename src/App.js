@@ -27,6 +27,7 @@ function App() {
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [articles, setArticles] = useState([]);
+    const [article, setArticle] = useState([]);
 
     const login = (data, token) => {
         setIsLoggedIn(true);
@@ -118,6 +119,8 @@ function App() {
                     setSearchQuery,
                     articles,
                     setArticles,
+                    article,
+                    setArticle,
                 }}
             >
                 {router}
