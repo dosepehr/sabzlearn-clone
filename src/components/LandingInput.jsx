@@ -1,11 +1,16 @@
 import { BiSearchAlt } from 'react-icons/bi';
 import { useContext } from 'react';
 import { mainContext } from '../context';
+import debounce from 'lodash.debounce';
 const LandingInput = () => {
     const { setSearchQuery } = useContext(mainContext);
-    const searchQueryHandler = (value) => {
-        setSearchQuery(value);
-    };
+    const searchQueryHandler = debounce(
+        (value) => {
+            setSearchQuery(value);
+        },
+        250,
+        { maxWait: 1000 }
+    );
     return (
         <div className='relative w-1/2 min-w-[300px] '>
             <input
