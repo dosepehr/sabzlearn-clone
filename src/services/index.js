@@ -47,3 +47,12 @@ export const getCourse = (courseName, token) => {
         },
     });
 };
+
+export const getArticles = (token) => {
+    const url = `${BASE_URL}/articles`;
+    return axios.get(url, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
+};

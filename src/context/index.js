@@ -27,4 +27,6 @@ export const mainContext = createContext({
     setLoading: () => {},
     searchQuery: '',
     setSearchQuery: () => {},
+    articles: [],
+    setArticles: () => {},
 });

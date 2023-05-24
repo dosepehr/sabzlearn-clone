@@ -2,7 +2,13 @@ import { useState, useEffect } from 'react';
 import { useRoutes, useNavigate } from 'react-router-dom';
 import { routes } from './routes/routes';
 import { mainContext } from './context';
-import { getMe, getTopbarLinks, getNavbarLinks, getCourses } from './services';
+import {
+    getMe,
+    getTopbarLinks,
+    getNavbarLinks,
+    getCourses,
+    getArticles,
+} from './services';
 function App() {
     const navigate = useNavigate();
     const router = useRoutes(routes);
@@ -18,8 +24,9 @@ function App() {
     const [navbarLinks, setNavbarLinks] = useState([]);
     const [course, setCourse] = useState([]);
     const [courses, setCourses] = useState([]);
-    const [loading, setLoading] = useState(false)
-    const [searchQuery,setSearchQuery]=useState('')
+    const [loading, setLoading] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [articles, setArticles] = useState([]);
 
     const login = (data, token) => {
         setIsLoggedIn(true);
@@ -68,9 +75,17 @@ function App() {
             );
             setCourses(data);
         };
+        const fetchArticles = async () => {
+            const { data } = await getArticles(
+                localStorage.getItem('userToken')
+            );
+            setArticles(data);
+        };
         fetchCoursesData();
         fetchNavbarLinks();
+        fetchArticles();
     }, []);
+
     return (
         <>
             <mainContext.Provider
@@ -100,7 +115,9 @@ function App() {
                     loading,
                     setLoading,
                     searchQuery,
-                    setSearchQuery
+                    setSearchQuery,
+                    articles,
+                    setArticles,
                 }}
             >
                 {router}

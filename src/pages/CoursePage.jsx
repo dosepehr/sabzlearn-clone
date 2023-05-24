@@ -16,8 +16,7 @@ import { NotFound } from '../pages';
 const CoursePage = () => {
     const farsiPrice = new Intl.NumberFormat('fa');
     const { courseName } = useParams();
-    const { course, setCourse, token, loading, setLoading } =
-        useContext(mainContext);
+    const { course, setCourse, loading, setLoading } = useContext(mainContext);
     useEffect(() => {
         const fetchCourseData = async () => {
             try {
@@ -144,11 +143,17 @@ const CoursePage = () => {
                                 </div>
                             </div>
                         )}
-                        <div className='bg-primaryColor'>
-                            <div className='max-w-[1080px] mx-auto py-10'>
-                                <Accordion sections={course.sessions} />
+                        {course.sessions > 0 ? (
+                            <div className='bg-primaryColor'>
+                                <div className='max-w-[1080px] mx-auto py-10'>
+                                    <Accordion sections={course.sessions} />
+                                </div>
                             </div>
-                        </div>
+                        ) : (
+                            <div className='bg-red-500 text-white p-5 rounded-lg text-center max-w-xs mx-auto'>
+                                <p>برای این دوره هنوز جلسه ای منتشر نشده</p>
+                            </div>
+                        )}
                     </>
                 ) : (
                     <Loader />
