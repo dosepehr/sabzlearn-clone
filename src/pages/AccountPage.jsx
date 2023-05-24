@@ -2,8 +2,9 @@ import { useContext } from 'react';
 import { Topbar, Navbar, Footer } from '../components';
 import { mainContext } from '../context';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 const AccountPage = () => {
-    const { logout } = useContext(mainContext);
+    const { logout, userInfo } = useContext(mainContext);
     const handleLogout = () => {
         Swal.fire({
             title: 'آیا مطمئنید که میخواهید از حساب کاربری خود خارج شوید؟',
@@ -23,7 +24,7 @@ const AccountPage = () => {
                     'منتظر برگشتتان هستیم :)',
                     'success'
                 );
-                logout()
+                logout();
             } else if (result.isDismissed) {
                 Swal.fire('خوبه که پیشمون داریمت', '', 'success');
             }
@@ -31,13 +32,19 @@ const AccountPage = () => {
     };
     return (
         <>
+            <Helmet>
+                <title>{`حساب کاربری | ${userInfo.username}`}</title>
+            </Helmet>
             <div className='bg-secondaryColor'>
                 <Topbar />
                 <Navbar />
             </div>
             <div className='bg-primaryColor pt-5'>
                 <div className='max-w-[1080px] mx-auto px-12 space-y-3'>
-                    <p className='text-topbatLinks py-40' onClick={handleLogout}>
+                    <p
+                        className='text-topbatLinks py-40'
+                        onClick={handleLogout}
+                    >
                         خروج از حساب کاربری ؟
                     </p>
                 </div>

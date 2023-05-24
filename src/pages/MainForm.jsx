@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import {
     LoginForm,
     RegisterForm,
@@ -10,6 +11,9 @@ import {
 const MainForm = ({ currentForm, setCurrentForm }) => {
     return (
         <>
+            <Helmet>
+                <title>ثبت نام کنید یا وارد شوید</title>
+            </Helmet>
             <div className='bg-secondaryColor'>
                 <Topbar />
                 <Navbar />

@@ -1,7 +1,13 @@
+import { Helmet } from 'react-helmet-async';
 import { Topbar, Navbar, Footer } from '../components';
 const NotFound = () => {
     return (
         <>
+            <Helmet>
+                <title>
+                    404
+                </title>
+            </Helmet>
             <div className='bg-secondaryColor'>
                 <Topbar />
                 <Navbar />

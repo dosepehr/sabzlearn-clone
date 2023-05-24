@@ -12,6 +12,7 @@ import { useContext, useEffect } from 'react';
 import { mainContext } from '../context';
 import { useParams } from 'react-router-dom';
 import { NotFound } from '../pages';
+import { Helmet } from 'react-helmet-async';
 
 const CoursePage = () => {
     const farsiPrice = new Intl.NumberFormat('fa');
@@ -37,6 +38,9 @@ const CoursePage = () => {
     if (Object.keys(course).length) {
         return (
             <>
+                <Helmet>
+                    <title>{`دوره | ${course.name}`}</title>
+                </Helmet>
                 <div className='bg-secondaryColor pb-10'>
                     <Topbar />
                     <Navbar />
@@ -54,8 +58,9 @@ const CoursePage = () => {
                                             links={[
                                                 {
                                                     id: 1,
-                                                    title: 'آموزش برنامه نویسی فرانت اند',
-                                                    href: 'categories/front-end',
+                                                    title: course.categoryID
+                                                        .title,
+                                                    href: `category-info/${course.categoryID.name}`,
                                                 },
                                             ]}
                                         />

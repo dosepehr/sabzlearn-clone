@@ -1,7 +1,11 @@
+import { Helmet } from 'react-helmet-async';
 import { Topbar, Navbar, Footer, Breadcrumb, Courses } from '../components';
 const ShopPage = () => {
     return (
         <>
+            <Helmet>
+                <title>سبزلرن | فروشگاه</title>
+            </Helmet>
             <div className='bg-secondaryColor'>
                 <Topbar />
                 <Navbar />

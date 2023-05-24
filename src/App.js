@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRoutes, useNavigate } from 'react-router-dom';
 import { routes } from './routes/routes';
 import { mainContext } from './context';
+import { HelmetProvider } from 'react-helmet-async';
 import {
     getMe,
     getTopbarLinks,
@@ -123,7 +124,7 @@ function App() {
                     setArticle,
                 }}
             >
-                {router}
+                <HelmetProvider>{router}</HelmetProvider>
             </mainContext.Provider>
         </>
     );

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getArticle } from '../services';
 import { mainContext } from '../context';
 import DOMPurify from 'dompurify';
+import { Helmet } from 'react-helmet-async';
 const ArticlePage = () => {
     const { setArticle, article } = useContext(mainContext);
     const { articleName } = useParams();
@@ -20,6 +21,9 @@ const ArticlePage = () => {
     }, [articleName, setArticle]);
     return (
         <>
+            <Helmet>
+                <title>{`مقاله | ${article.title}`}</title>
+            </Helmet>
             <div className='bg-secondaryColor'>
                 <Topbar />
                 <Navbar />

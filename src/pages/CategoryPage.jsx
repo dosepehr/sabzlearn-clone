@@ -2,12 +2,16 @@ import { useParams, Link } from 'react-router-dom';
 import { Topbar, Navbar, Footer, Courses, Breadcrumb } from '../components';
 import { useContext } from 'react';
 import { mainContext } from '../context';
+import { Helmet } from 'react-helmet-async';
 const CategoryPage = () => {
     const { navbarLinks } = useContext(mainContext);
     const { categoryName } = useParams();
     const category = navbarLinks.filter((data) => data.href === categoryName);
     return (
         <>
+            <Helmet>
+                <title>دسته بندی ها</title>
+            </Helmet>
             <div className='bg-secondaryColor'>
                 <Topbar />
                 <Navbar />
