@@ -3,7 +3,6 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className='bg-secondaryColor py-10'>
-            {/* TODO add footer links */}
             <div className='max-w-[1080px] mx-auto'>
                 <p className='text-mainGreen mb-10 mr-10'>
                     ضمانت سبز لرن برای کلیه محصولات آموزشی

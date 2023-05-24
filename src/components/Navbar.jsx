@@ -11,7 +11,6 @@ const Navbar = () => {
         setMenu((prev) => !prev);
     };
     return (
-        // TODO edit menues style
         <>
             <div className='border-b-[1px] border-b-white border-opacity-30'>
                 <div className='max-w-[1080px] items-center justify-between mx-auto p-2 flex'>

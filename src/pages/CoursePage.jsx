@@ -16,7 +16,6 @@ import { NotFound } from '../pages';
 const CoursePage = () => {
     const farsiPrice = new Intl.NumberFormat('fa');
     const { courseName } = useParams();
-    // TODO get token from state
     const { course, setCourse, token, loading, setLoading } =
         useContext(mainContext);
     useEffect(() => {

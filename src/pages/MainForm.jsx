@@ -10,7 +10,6 @@ import {
 const MainForm = ({ currentForm, setCurrentForm }) => {
     return (
         <>
-            {/* TODO edit styles */}
             <div className='bg-secondaryColor'>
                 <Topbar />
                 <Navbar />

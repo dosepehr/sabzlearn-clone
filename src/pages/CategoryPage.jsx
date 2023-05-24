@@ -8,7 +8,6 @@ const CategoryPage = () => {
     const category = navbarLinks.filter((data) => data.href === categoryName);
     return (
         <>
-            {/* TODO add pagination */}
             <div className='bg-secondaryColor'>
                 <Topbar />
                 <Navbar />

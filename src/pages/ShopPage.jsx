@@ -2,7 +2,6 @@ import { Topbar, Navbar, Footer, Breadcrumb, Courses } from '../components';
 const ShopPage = () => {
     return (
         <>
-            {/* TODO add pagiantion */}
             <div className='bg-secondaryColor'>
                 <Topbar />
                 <Navbar />
