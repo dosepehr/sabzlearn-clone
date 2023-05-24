@@ -3,9 +3,7 @@ import {
     LoginForm,
     RegisterForm,
     FormButtons,
-    Footer,
-    Navbar,
-    Topbar,
+    PageWrapper,
 } from '../components';
 
 const MainForm = ({ currentForm, setCurrentForm }) => {
@@ -14,26 +12,23 @@ const MainForm = ({ currentForm, setCurrentForm }) => {
             <Helmet>
                 <title>ثبت نام کنید یا وارد شوید</title>
             </Helmet>
-            <div className='bg-secondaryColor'>
-                <Topbar />
-                <Navbar />
-            </div>
-            <div className='bg-secondaryColor text-center py-4 border-y-2 border-y-mainWhite'>
-                <p className='text-mainWhite text-3xl'>حساب کاربری من</p>
-            </div>
-            <div className=' bg-primaryColor'>
-                <div className='flex items-center justify-center'>
-                    <div className='w-96 h-[500px] rounded-md overflow-x-hidden relative bg-red'>
-                        <FormButtons
-                            currentForm={currentForm}
-                            setCurrentForm={setCurrentForm}
-                        />
-                        <LoginForm />
-                        <RegisterForm />
+            <PageWrapper>
+                <div className='bg-secondaryColor text-center py-4 border-y-2 border-y-mainWhite'>
+                    <p className='text-mainWhite text-3xl'>حساب کاربری من</p>
+                </div>
+                <div className=' bg-primaryColor'>
+                    <div className='flex items-center justify-center'>
+                        <div className='w-96 h-[500px] rounded-md overflow-x-hidden relative bg-red'>
+                            <FormButtons
+                                currentForm={currentForm}
+                                setCurrentForm={setCurrentForm}
+                            />
+                            <LoginForm />
+                            <RegisterForm />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <Footer />
+            </PageWrapper>
         </>
     );
 };
