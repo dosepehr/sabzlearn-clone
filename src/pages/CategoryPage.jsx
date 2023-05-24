@@ -25,9 +25,10 @@ const CategoryPage = () => {
                     />
                     <div className='w-fit space-y-5 '>
                         {navbarLinks.map(
-                            (link) =>
+                            (link, i) =>
                                 link.href !== categoryName && (
                                     <Link
+                                        key={i}
                                         to={`/categories/${link.href}`}
                                         className='text-topbatLinks block'
                                     >

@@ -35,7 +35,6 @@ const CoursePage = () => {
         };
         fetchCourseData();
     }, []);
-    console.log(course);
     if (Object.keys(course).length) {
         return (
             <>
