@@ -18,7 +18,6 @@ const CoursePage = () => {
     // TODO get token from state
     const { course, setCourse, token, loading, setLoading } =
         useContext(mainContext);
-
     useEffect(() => {
         const fetchCourseData = async () => {
             try {
@@ -36,25 +35,8 @@ const CoursePage = () => {
         };
         fetchCourseData();
     }, []);
-
-    const sections = [
-        {
-            title: 'فصل اول',
-            sessions: [
-                { id: '1', title: 'جلسه اول فصل اول', time: '10:12' },
-                { id: '2', title: 'جلسه دوم فصل اول', time: '20:43' },
-            ],
-        },
-        {
-            title: 'فصل دوم',
-            sessions: [
-                { id: '1', title: 'جلسه اول فصل دوم', time: '15:56' },
-                { id: '2', title: 'جلسه دوم فصل دوم', time: '22:45' },
-            ],
-        },
-    ];
-
-    if (course.name) {
+    console.log(course);
+    if (Object.keys(course).length) {
         return (
             <>
                 <div className='bg-secondaryColor pb-10'>
@@ -163,7 +145,7 @@ const CoursePage = () => {
                         )}
                         <div className='bg-primaryColor'>
                             <div className='max-w-[1080px] mx-auto py-10'>
-                                <Accordion sections={sections} />
+                                <Accordion sections={course.sessions} />
                             </div>
                         </div>
                     </>

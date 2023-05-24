@@ -40,7 +40,7 @@ const Navbar = () => {
                                             {link.title}
                                         </Link>
                                         {link.submenus.length > 0 && (
-                                            <div className='absolute bg-[#15151c] p-4 rounded-xl w-max flex flex-col space-y-4 opacity-0 group-hover:opacity-100 group-hover:z-50 duration-300 '>
+                                            <div className='absolute bg-[#15151c] p-4 rounded-xl w-max flex-col space-y-4 hidden group-hover:flex group-hover:z-50 duration-300 '>
                                                 {link.submenus.map((item,index) => (
                                                     <Link
                                                         key={index}
