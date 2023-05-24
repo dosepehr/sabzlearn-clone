@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Image, Shimmer } from 'react-shimmer';
 const CourseBox = ({ name, price, shortName }) => {
+    const farsiStudent = new Intl.NumberFormat('fa', { useGrouping: false });
+    const farsiPrice = new Intl.NumberFormat('fa');
     return (
         <>
             <Link to={`/course-info/${shortName}`}>
@@ -15,11 +17,13 @@ const CourseBox = ({ name, price, shortName }) => {
                         <p className='text-white text-center my-6'>{name}</p>
                         <div className='flex items- justify-between'>
                             <p className='text-white'>
-                                {price ? `${price} تومان` : 'رایگان'}
+                                {price
+                                    ? `${farsiPrice.format(price)} تومان`
+                                    : 'رایگان'}
                             </p>
                             <div className='flex flex-col items-center justify-center'>
                                 <p className='text-mainYellow font-semibold'>
-                                    1020
+                                    {farsiStudent.format(1020)}
                                 </p>
                                 <p className='text-white'>دانشجو</p>
                             </div>

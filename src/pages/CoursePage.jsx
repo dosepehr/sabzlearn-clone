@@ -14,6 +14,7 @@ import { useParams } from 'react-router-dom';
 import { NotFound } from '../pages';
 
 const CoursePage = () => {
+    const farsiPrice = new Intl.NumberFormat('fa');
     const { courseName } = useParams();
     // TODO get token from state
     const { course, setCourse, token, loading, setLoading } =
@@ -79,7 +80,9 @@ const CoursePage = () => {
                                         <div className='w-full md:w-4/12'>
                                             <p className='text-topbatLinks text-center'>
                                                 {course.price
-                                                    ? `${course.price} تومان`
+                                                    ? `${farsiPrice.format(
+                                                          course.price
+                                                      )} تومان`
                                                     : 'رایگان'}
                                             </p>
                                             <p className='bg-[#ffffff45] text-white py-2 px-1 rounded-md my-5'>
