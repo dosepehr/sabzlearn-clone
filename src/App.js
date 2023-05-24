@@ -18,7 +18,8 @@ function App() {
     const [navbarLinks, setNavbarLinks] = useState([]);
     const [course, setCourse] = useState([]);
     const [courses, setCourses] = useState([]);
-    const [loading,setLoading]=useState(false)
+    const [loading, setLoading] = useState(false)
+    const [searchQuery,setSearchQuery]=useState('')
 
     const login = (data, token) => {
         setIsLoggedIn(true);
@@ -97,7 +98,9 @@ function App() {
                     setCourse,
                     courses,
                     loading,
-                    setLoading
+                    setLoading,
+                    searchQuery,
+                    setSearchQuery
                 }}
             >
                 {router}

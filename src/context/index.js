@@ -25,4 +25,6 @@ export const mainContext = createContext({
     courses: [],
     loading: false,
     setLoading: () => {},
+    searchQuery: '',
+    setSearchQuery: () => {},
 });
