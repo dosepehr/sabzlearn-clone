@@ -40,7 +40,7 @@ const ArticlesSlider = () => {
     return (
         <div className='bg-primaryColor pb-10'>
             <div className='max-w-[1080px] mx-auto px-10'>
-                <p className='text-topbatLinks text-center text-lg mb-10 title'>
+                <p className='text-mainWhite text-center text-lg mb-10 title'>
                     آخرین مقالات سایت
                 </p>
                 <Slider {...settings}>

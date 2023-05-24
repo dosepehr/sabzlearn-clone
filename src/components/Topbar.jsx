@@ -12,7 +12,7 @@ const Topbar = () => {
                     {topbarLinks.map((link, index) => (
                         <Link
                             to={link.href}
-                            className='text-topbatLinks mx-2 text-sm'
+                            className='text-mainWhite mx-2 text-sm'
                             key={index}
                         >
                             {link.title}

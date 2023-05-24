@@ -7,7 +7,7 @@ const Footer = () => {
                 <p className='text-mainGreen mb-10 mr-10'>
                     ضمانت سبز لرن برای کلیه محصولات آموزشی
                 </p>
-                <p className='text-topbatLinks text-justify '>
+                <p className='text-mainWhite text-justify '>
                     وقتی تازه شروع به یادگیری برنامه نویسی کردم. یکی از مشکلاتی
                     که در فرآیند یادگیری داشتم، کمبود آموزش های خوب با پشتیبانی
                     قابل قبول بود که باعث شد اون موقع تصمیم بگیرم اگر روزی
@@ -22,7 +22,7 @@ const Footer = () => {
                     های رایگان شون هم هزینه دریافت میکنند و متعهد هستند که هوای
                     کاربر های عزیز رو داشته باشند
                 </p>
-                <p className='text-center text-topbatLinks mt-10'>
+                <p className='text-center text-mainWhite mt-10'>
                     تمامی حقوق برای{' '}
                     <span className='text-secondaryGreen text-lg'>سبزلرن</span>{' '}
                     محفوظ است 1401

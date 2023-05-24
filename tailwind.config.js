@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                topbatLinks: '#ffffffcc',
+                mainWhite: '#ffffffcc',
                 primaryColor: '#242531',
                 secondaryColor: '#2f3040',
                 mainYellow: '#cdb187',

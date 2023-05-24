@@ -29,35 +29,34 @@ const Navbar = () => {
                             />
                         </Link>
                         <div className='hidden min-[930px]:flex'>
-                            {navbarLinks.map((link,index) => (
+                            {navbarLinks.map((link, index) => (
                                 <div className='group' key={link._id}>
                                     <div className='relative'>
                                         <Link
                                             to={`/category-info/${link.href}`}
-                                            className='mx-2 text-topbatLinks  peer'
+                                            className='mx-2 text-mainWhite  peer'
                                         >
                                             {link.title}
                                         </Link>
                                         {link.submenus.length > 0 && (
                                             <div className='absolute bg-[#15151c] p-4 rounded-xl w-max flex-col space-y-4 hidden group-hover:flex group-hover:z-50 duration-300 '>
-                                                {link.submenus.map((item,index) => (
-                                                    <Link
-                                                        key={index}
-                                                        to={item.href}
-                                                        className='text-topbatLinks'
-                                                    >
-                                                        {item.title}
-                                                    </Link>
-                                                ))}
+                                                {link.submenus.map(
+                                                    (item, index) => (
+                                                        <Link
+                                                            key={index}
+                                                            to={item.href}
+                                                            className='text-mainWhite'
+                                                        >
+                                                            {item.title}
+                                                        </Link>
+                                                    )
+                                                )}
                                             </div>
                                         )}
                                     </div>
                                 </div>
                             ))}
-                            <Link
-                                to={`/shop/`}
-                                className='mx-2 text-topbatLinks'
-                            >
+                            <Link to={`/shop/`} className='mx-2 text-mainWhite'>
                                 فروشگاه
                             </Link>
                         </div>

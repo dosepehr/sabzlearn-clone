@@ -80,7 +80,7 @@ const CoursePage = () => {
                                             </div>
                                         </div>
                                         <div className='w-full md:w-4/12'>
-                                            <p className='text-topbatLinks text-center'>
+                                            <p className='text-mainWhite text-center'>
                                                 {course.price
                                                     ? `${farsiPrice.format(
                                                           course.price
@@ -93,7 +93,7 @@ const CoursePage = () => {
                                                 میتوانید دوره را مشاهده و یا
                                                 دانلود کنید.
                                             </p>
-                                            <div className='text-topbatLinks'>
+                                            <div className='text-mainWhite'>
                                                 <p>
                                                     پــروژه مــحور بودن دوره
                                                     هــــا
@@ -109,15 +109,15 @@ const CoursePage = () => {
                                         </div>
                                     </div>
                                     <div className='grid grid-cols-2 md:grid-cols-4 gap-4 py-10'>
-                                        <div className='bg-primaryColor border-r-topbatLinks border-dashed border-r-2'>
-                                            <div className='text-topbatLinks px-3 py-4'>
+                                        <div className='bg-primaryColor border-r-mainWhite border-dashed border-r-2'>
+                                            <div className='text-mainWhite px-3 py-4'>
                                                 <p className='text-sm'>
                                                     مدرس : {course.creator.name}
                                                 </p>
                                             </div>
                                         </div>
-                                        <div className='bg-primaryColor border-r-topbatLinks border-dashed border-r-2'>
-                                            <div className='text-topbatLinks px-3 py-4'>
+                                        <div className='bg-primaryColor border-r-mainWhite border-dashed border-r-2'>
+                                            <div className='text-mainWhite px-3 py-4'>
                                                 <p className='text-sm'>
                                                     وضعیت دوره :
                                                     {course.isComplete
@@ -126,23 +126,23 @@ const CoursePage = () => {
                                                 </p>
                                             </div>
                                         </div>
-                                        <div className='bg-primaryColor border-r-topbatLinks border-dashed border-r-2'>
-                                            <div className='text-topbatLinks px-3 py-4'>
+                                        <div className='bg-primaryColor border-r-mainWhite border-dashed border-r-2'>
+                                            <div className='text-mainWhite px-3 py-4'>
                                                 <p className='text-sm'>
                                                     تعداد درس :{' '}
                                                     {course.sessions.length}
                                                 </p>
                                             </div>
                                         </div>
-                                        <div className='bg-primaryColor border-r-topbatLinks border-dashed border-r-2'>
-                                            <div className='text-topbatLinks px-3 py-4'>
+                                        <div className='bg-primaryColor border-r-mainWhite border-dashed border-r-2'>
+                                            <div className='text-mainWhite px-3 py-4'>
                                                 <p className='text-sm'>
                                                     دانشجو : 1020
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='text-topbatLinks'>
+                                    <div className='text-mainWhite'>
                                         {course.description}
                                     </div>
                                 </div>

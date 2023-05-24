@@ -34,7 +34,7 @@ const CategoryPage = () => {
                                     <Link
                                         key={i}
                                         to={`/categories/${link.href}`}
-                                        className='text-topbatLinks block'
+                                        className='text-mainWhite block'
                                     >
                                         {link.title}
                                     </Link>

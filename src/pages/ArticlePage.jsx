@@ -31,7 +31,7 @@ const ArticlePage = () => {
             <div className='bg-primaryColor pt-5'>
                 <div className='max-w-[1080px] mx-auto px-12 space-y-3'>
                     {article ? (
-                        <div className='text-topbatLinks '>
+                        <div className='text-mainWhite '>
                             <h2 className='text-3xl font-bold'>
                                 {article.title}
                             </h2>

@@ -18,8 +18,8 @@ const MainForm = ({ currentForm, setCurrentForm }) => {
                 <Topbar />
                 <Navbar />
             </div>
-            <div className='bg-secondaryColor text-center py-4 border-y-2 border-y-topbatLinks'>
-                <p className='text-topbatLinks text-3xl'>حساب کاربری من</p>
+            <div className='bg-secondaryColor text-center py-4 border-y-2 border-y-mainWhite'>
+                <p className='text-mainWhite text-3xl'>حساب کاربری من</p>
             </div>
             <div className=' bg-primaryColor'>
                 <div className='flex items-center justify-center'>
