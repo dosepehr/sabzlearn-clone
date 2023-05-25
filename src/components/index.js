@@ -14,6 +14,6 @@ export { default as LoginForm } from './LoginForm';
 export { default as RegisterForm } from './RegisterForm';
 export { default as FormButtons } from './FormButtons';
 export { default as LandingInput } from './LandingInput';
-export { default as NoCourseFounded } from './NoCourseFounded';
+export { default as NoItemFounded } from './NoItemFounded';
 export { default as PageWrapper } from './PageWrapper';
 export { default as toast } from './toast';

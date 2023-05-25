@@ -4,7 +4,7 @@ import { getArticle } from '../services';
 import { mainContext } from '../context';
 import DOMPurify from 'dompurify';
 import { Helmet } from 'react-helmet-async';
-import { PageWrapper } from '../components';
+import { PageWrapper, NoItemFounded } from '../components';
 const ArticlePage = () => {
     const { setArticle, article } = useContext(mainContext);
     const { articleName } = useParams();
@@ -43,9 +43,9 @@ const ArticlePage = () => {
                                 ></div>
                             </div>
                         ) : (
-                            <div className='bg-red-500 text-white p-5 rounded-lg text-center max-w-xs mx-auto'>
-                                <p>مقاله مدنظر شما پیدا نشد</p>
-                            </div>
+                            <NoItemFounded
+                                message={'مقاله مدنظر شما پیدا نشد'}
+                            />
                         )}
                     </div>
                 </div>

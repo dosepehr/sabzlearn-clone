@@ -1,5 +1,11 @@
 import { Image, Shimmer } from 'react-shimmer';
-import { Breadcrumb, Accordion, Loader, PageWrapper } from '../components';
+import {
+    Breadcrumb,
+    Accordion,
+    Loader,
+    PageWrapper,
+    NoItemFounded,
+} from '../components';
 import { getCourse } from '../services';
 import { useContext, useEffect } from 'react';
 import { mainContext } from '../context';
@@ -147,15 +153,16 @@ const CoursePage = () => {
                                     </div>
                                 </div>
                             ) : (
-                                <div className='bg-red-500 text-white p-5 rounded-lg text-center max-w-xs mx-auto'>
-                                    <p>برای این دوره هنوز جلسه ای منتشر نشده</p>
-                                </div>
+                                <NoItemFounded
+                                    message={
+                                        'برای این دوره هنوز جلسه ای منتشر نشده'
+                                    }
+                                />
                             )}
                         </>
                     ) : (
                         <Loader />
                     )}
-
                 </PageWrapper>
             </>
         );

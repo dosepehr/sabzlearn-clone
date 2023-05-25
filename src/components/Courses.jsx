@@ -1,4 +1,4 @@
-import { CourseBox, NoCourseFounded, Loader } from './';
+import { CourseBox, NoItemFounded, Loader } from './';
 import { useContext, useEffect, useState } from 'react';
 import { mainContext } from '../context';
 const Courses = () => {
@@ -23,7 +23,9 @@ const Courses = () => {
                                 ))}
                             </div>
                         ) : (
-                            <NoCourseFounded />
+                            <NoItemFounded
+                                message={'دوره مدنظر شما پیدا نشد'}
+                            />
                         )}
                     </div>
                 </div>
